@@ -1,0 +1,29 @@
+{
+	"pt": {
+		"viewport": {
+			"title": {
+				"text": "Olá, meu nome é",
+				"mark": "Renan Zanoti"
+			},
+			"subtitle": "Desenvolvedor Front-End Senior especialista em React"
+		}
+	},
+	"en": {
+		"viewport": {
+			"title": {
+				"text": "Hello, my name is",
+				"mark": "Renan Zanoti"
+			},
+			"subtitle": "Senior Front End Developer specializing in React"
+		}
+	},
+	"es": {
+		"viewport": {
+			"title": {
+				"text": "Hola, mi nombre es",
+				"mark": "Renan Zanoti"
+			},
+			"subtitle": "Desarrollador Front End Senior especializado en React"
+		}
+	}
+}

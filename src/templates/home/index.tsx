@@ -60,7 +60,7 @@ const HomeTemplate: NextComponentType = () => {
                     <img src="/assets/icons/kderno-logo.svg" />
                 </S.ListOfCompanies>
 
-                {/* <ContactForm /> */}
+                <ContactForm />
             </S.Content>
         </Layout>
     );

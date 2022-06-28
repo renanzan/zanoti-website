@@ -1,10 +1,36 @@
-import Document, { Head, Html, Main, NextScript, DocumentContext } from "next/document";
+import Document, { Head, Html, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
+import Script from "next/script";
+import { ServerStyleSheet } from "styled-components";
 
-class MyDocument extends Document {
-	static async getInitialProps(ctx: DocumentContext): Promise<Record<string, unknown> & { html: string }> {
-		const initialProps = await Document.getInitialProps(ctx);
-		return { ...initialProps };
-	}
+class AppDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+
+      return {
+        ...initialProps,
+        styles: [
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>,
+        ],
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
 
 	render(): JSX.Element {
 		return (
@@ -21,6 +47,20 @@ class MyDocument extends Document {
                     <meta name="msapplication-TileColor" content="#25262A" />
                     <meta name="theme-color" content="#25262A" />
                     <meta charSet="utf-8" />
+
+					<Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+					<Script
+						strategy="lazyOnload"
+						dangerouslySetInnerHTML={{
+						__html: `
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+							gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+							page_path: window.location.pathname,
+							});
+						`,
+					}} />
 				</Head>
 
 				<body>
@@ -32,4 +72,4 @@ class MyDocument extends Document {
 	}
 }
 
-export default MyDocument;
+export default AppDocument;

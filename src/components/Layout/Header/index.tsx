@@ -6,7 +6,7 @@ import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { useLayout } from "..";
-import navLinks from "./nav";
+import NavLinks from "../NavLinks";
 import * as S from "./styles";
 
 const headerVariants = {
@@ -39,12 +39,21 @@ const Header: NextComponentType = () => {
 	const { pathname } = useRouter();
 	const { header, window } = useLayout();
 	const { scrollY } = useViewportScroll();
-	const headerPadding = useTransform(scrollY, [100, 300], ["42px 80px", "12px 84px"]);
-	const headerBoxShadow = useTransform(scrollY, [100, 300], ["0px 0px 0px rgba(0, 0, 0, 0)", "0 10px 30px -10px rgba(30, 30, 30, 0.7)"]);
+
 	const [hidden, setHidden] = useState(false);
 	const prevScroll = useRef<number>(0);
 
 	const checkCurrent = (path: string) => (path === pathname);
+
+	const getRootAnimation = () => {
+		const padding = useTransform(scrollY, [100, 300], ["42px 80px", "12px 84px"]);
+		const boxShadow = useTransform(scrollY, [100, 300], ["0px 0px 0px rgba(0, 0, 0, 0)", "0 10px 30px -10px rgba(30, 30, 30, 0.7)"]);
+		
+		if(window.size.width < 600)
+			return undefined;
+
+		return ({ padding, boxShadow });
+	}
 
 	useEffect(() => {
 		function update(scroll: number) {
@@ -61,9 +70,10 @@ const Header: NextComponentType = () => {
 
 	return (
 		<S.Root
-			style={{ padding: headerPadding, boxShadow: headerBoxShadow }}
+			style={getRootAnimation()}
 			animate={hidden ? "hidden" : "visible"}
-			variants={headerVariants}>
+			variants={headerVariants}
+			transition={{ type: "tween" }}>
 			<S.Menu
 				initial="hidden"
 				animate="visible"
@@ -73,15 +83,7 @@ const Header: NextComponentType = () => {
 					<S.Logo {...header?.logo} responsive={window.size.width < 800} />
 				</S.LogoContainer>
 
-				<S.NavItemsContainer>
-					{navLinks.map((link, key) => (
-						<Link key={key} href={link.pathname} passHref>
-							<S.NavLink variants={item} current={checkCurrent(link.pathname)}>
-								<label>{link.label}</label>
-							</S.NavLink>
-						</Link>
-					))}
-				</S.NavItemsContainer>
+				<NavLinks variants={item} />
 
 				<S.SocialLinks>
 					<Link href="https://github.com/renanzan" passHref>

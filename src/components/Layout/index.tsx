@@ -1,9 +1,13 @@
 import React, { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { NextComponentType } from "next";
+import Head from "next/head";
 
 import useWindowSize, { WindowSize } from "hooks/useWindowSize";
+import WaterMarkSection from "components/WaterMarkSection";
 import Header from "./Header";
+
 import * as S from "./styles";
+import Footer from "./Footer";
 
 type HeaderCustom = {
 	logo: {
@@ -27,13 +31,16 @@ interface LayoutContext {
 }
 
 interface Props extends React.ParamHTMLAttributes<HTMLDivElement> {
+	title?: string;
+	waterMarkSection?: string;
 	children: React.ReactNode;
+	style?: React.CSSProperties;
 }
 
 export const LayoutContext = createContext<LayoutContext>({} as LayoutContext);
 export const useLayout = () => useContext(LayoutContext);
 
-const Layout: NextComponentType<{}, {}, Props> = ({ children, ...rest }) => {
+const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, children, ...rest }) => {
 	const windowSize = useWindowSize();
 	const [header, setHeader] = useState<undefined | HeaderCustom>();
 	const [scroll, setScroll] = useState<undefined | ScrollWindow>();
@@ -59,12 +66,22 @@ const Layout: NextComponentType<{}, {}, Props> = ({ children, ...rest }) => {
 
 	return (
 		<LayoutContext.Provider value={{ header, window: { size: windowSize, scroll }, setHeader }}>
+			<Head>
+				<title>{title || "Renan Zanoti"}</title>
+			</Head>
+			
 			<S.Root>
 				<Header />
+
+				{waterMarkSection && (
+					<WaterMarkSection>{waterMarkSection}</WaterMarkSection>
+				)}
 
 				<S.Main {...rest}>
 					{children}
 				</S.Main>
+
+				<Footer />
 			</S.Root>
 		</LayoutContext.Provider>
 	);

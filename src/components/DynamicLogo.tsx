@@ -13,8 +13,8 @@ const DynamicLogo: NextComponentType<{}, {}, Props> = ({ primary, secondary, res
 
 	const animationPrimary = {
 		transition,
-		initial: { fill: primary || "var(--text)" },
-		animate: { fill: primary || "var(--text)" }
+		initial: { fill: primary || "var(--primary)" },
+		animate: { fill: primary || "var(--primary)" }
 	}
 
 	const animationSecondary = {
@@ -24,7 +24,7 @@ const DynamicLogo: NextComponentType<{}, {}, Props> = ({ primary, secondary, res
 	}
 
 	return (
-		<svg width="291" height="71" viewBox="0 0 291 71" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+		<svg width={responsive ? "71" : "291"} height="71" viewBox={responsive ? "0 0 71 71" : "0 0 291 71"} fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
 			<motion.path {...animationPrimary} d="M54.5 8.5H23.5C23.5 8.5 28 13.7813 28 18.5C28 27.5 21.5 33.5 16 41C9.48828 49.8796 1.5 62.5 1.5 62.5H33.5C33.5 62.5 29.0938 58 29.5 51.5C30 43.5 33.727 39.8165 37.5 34.5C48.5 19 54.5 8.5 54.5 8.5Z" />
 			<motion.circle {...animationPrimary} cx="12.5" cy="19.5" r="12.5" />
 			<motion.circle {...animationPrimary} cx="44.5" cy="51.5" r="12.5" />

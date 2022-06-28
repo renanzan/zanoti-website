@@ -8,14 +8,17 @@ export default [
 	{
 		label: "Início",
 		pathname: "/"
-	}, {
-		label: "Projetos",
-		pathname: "/projects"
-	}, {
+	},
+	// {
+	// 	label: "Projetos",
+	// 	pathname: "/projects"
+	// },
+	{
 		label: "Blog",
 		pathname: "/blog"
-	}, {
-		label: "Contato",
-		pathname: "/contact"
-	}
+	},
+	// {
+	// 	label: "Contato",
+	// 	pathname: "/contact"
+	// }
 ] as Array<NavLinks>;

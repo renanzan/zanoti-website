@@ -12,6 +12,9 @@ const GAPageView: NextComponentType<{}, {}, GAPageViewProps> = ({ children }) =>
 	const router = useRouter();
 
 	useEffect(() => {
+		if (process.env.NODE_ENV !== "production")
+			return;
+
 		function handleRouteChange(url: string) {
 			pageview(url);
 		}

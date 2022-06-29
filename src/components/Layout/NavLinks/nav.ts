@@ -16,9 +16,8 @@ export default [
 	{
 		label: "Blog",
 		pathname: "/blog"
-	},
-	// {
-	// 	label: "Contato",
-	// 	pathname: "/contact"
-	// }
+	}, {
+		label: "Contato",
+		pathname: "/contact"
+	}
 ] as Array<NavLinks>;

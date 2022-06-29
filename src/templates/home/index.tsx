@@ -1,4 +1,5 @@
 import { NextComponentType } from "next";
+import Link from "next/link";
 import Image from "next/image";
 
 import Layout from "components/Layout";
@@ -19,7 +20,7 @@ const HomeTemplate: NextComponentType = () => {
 
 					<p>Sou desenvolvedor de software especializado em React, crio aplicações e páginas web do zero. Sou extremamente apaixonado pelo que faço!</p>
 
-					<a href="#">Vamos criar algo incrível juntos?</a>
+					<Link href="/contact" passHref><a>Vamos criar algo incrível juntos?</a></Link>
 				</S.CoverInfoContainer>
 
 				<MyPhoto />

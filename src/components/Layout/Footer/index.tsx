@@ -41,6 +41,12 @@ const Footer: NextComponentType = () => {
 						</Link>
 					</S.SocialLinks>
 				</section>
+
+				<S.MobileSiteRights>
+					<DynamicLogo />
+
+					<label>© 2022. All Rights Reserved</label>
+				</S.MobileSiteRights>
 			</S.Content>
 		</S.Root>
 	)

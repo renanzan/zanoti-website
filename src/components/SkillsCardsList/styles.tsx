@@ -8,6 +8,7 @@ export const Root = styled.div`
 export const SkillsList = styled.ul`
     display: flex;
     flex-direction: column;
+		align-items: center;
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -22,5 +23,5 @@ export const ShowProjects = styled.a`
     text-align: center;
     color: var(--primary);
     font-size: 12px;
-    margin: 24px;
+    margin: 24px 24px 0px 24px;
 `;

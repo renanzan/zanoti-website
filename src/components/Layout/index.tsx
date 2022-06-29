@@ -69,7 +69,7 @@ const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, chi
 			<Head>
 				<title>{title || "Renan Zanoti"}</title>
 			</Head>
-			
+
 			<S.Root>
 				<Header />
 

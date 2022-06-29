@@ -9,7 +9,8 @@ const MyPhoto: NextComponentType = () => {
 			<S.FloatingSphere
 				x="-30px"
 				y="50%"
-				z={3}>
+				z={3}
+				speed={11}>
 				<Image
 					src="/assets/icons/node-js.svg"
 					height="40px"
@@ -18,14 +19,14 @@ const MyPhoto: NextComponentType = () => {
 
 			<Image
 				src="/assets/images/photo.png"
-				height="256px"
-				width="256px"
-				style={{ zIndex: 1 }} />
+				layout="fill"
+				style={{ zIndex: 2 }} />
 
 			<S.FloatingSphere
 				x="calc(100% - 80px)"
 				y="calc(100% - 80px)"
-				z={3}>
+				z={4}
+				speed={9}>
 				<Image
 					src="/assets/icons/react-js.svg"
 					height="64px"
@@ -35,15 +36,16 @@ const MyPhoto: NextComponentType = () => {
 			<S.FloatingSphere
 				x="calc(100% - 60px)"
 				y="-20px"
-				z={1}>
+				z={1}
+				speed={8}>
 				<Image
 					src="/assets/icons/ts.svg"
 					height="32px"
 					width="32px" />
 			</S.FloatingSphere>
 
-			<S.FloatingSphere x="-25px" y="20px" />
-			<S.FloatingBlueSphere x="calc(100% + 32px)" y="calc(100% - 96px)" />
+			<S.FloatingSphere x="-25px" y="20px" z={2} speed={10} />
+			<S.FloatingBlueSphere x="calc(100% + 32px)" y="calc(100% - 96px)" speed={11} />
 			<S.ShadowBall />
 		</S.Root>
 	);

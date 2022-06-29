@@ -32,6 +32,7 @@ export const Title = styled.h2`
     font-size: 32px;
     font-weight: 400;
     letter-spacing: -0.04em;
+		text-align: center;
     color: var(--primary);
     margin: 0px;
 `;
@@ -43,26 +44,34 @@ export const Message = styled.p`
 `;
 
 export const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-    margin-top: 48px;
-    font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 8px;
+	margin-top: 48px;
+	font-family: 'Roboto', sans-serif;
 
-    >* {
-        width: 100%;
-    }
+	>* {
+		width: 100%;
+	}
 
-    >div {
-        display: flex;
-        gap: 8px;
-        
-        >input {
-            flex: 1;
-        }
-    }
+	>div {
+		display: flex;
+		gap: 8px;
+		
+		>input {
+			flex: 1;
+		}
+
+		@media (max-width:480px) {
+			flex-direction: column;
+		}
+	}
+
+	@media (max-width:480px) {
+		margin-top: 24px;
+	}
 `;
 
 type InputParams = {
@@ -206,6 +215,10 @@ export const SendButton = styled.button.attrs({
         opacity: 0.5;
         filter: brightness(1.3);
     `}
+
+		@media (max-width:480px) {
+			max-width: unset;
+		}
 `;
 
 export const CircleLoadingContainer = styled.svg.attrs({

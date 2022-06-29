@@ -40,9 +40,9 @@ const HomeTemplate: NextComponentType = () => {
 						<S.IntroductionDescription>
 							{`Sou profissional de Front-End e atualmente me especializo em ReactJS. Sou extremamente apaixonado pelo que faço e estou sempre buscando me aperfeiçoar. Tenho experiência na criação de aplicações e páginas web complexas do zero, bem como no manutenção e melhorias de aplicativos web.
                             
-                            Sou detalhista e organizado, procuro sempre criar interfaces extremamente intuitivas e de fácil usabilidade. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
-                            
-                            Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:`}
+								Sou detalhista e organizado, procuro sempre criar interfaces extremamente intuitivas e de fácil usabilidade. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
+								
+								Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:`}
 						</S.IntroductionDescription>
 
 						<S.TechList>

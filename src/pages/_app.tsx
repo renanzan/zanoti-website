@@ -12,23 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
 		<Fragment>
 			<Script
 				strategy="lazyOnload"
-				src={`https://www.googletagmanager.com/gtag/js?id=G-3WYVWTWSKD`} />
-
-			<Script
-				strategy="lazyOnload"
-				id="google-analytics">
-				{`
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-3WYVWTWSKD', {
-					page_path: window.location.pathname,
-					});
-				`}
-			</Script>
-
-			<Script
-				strategy="lazyOnload"
 				id="google-tag-manager-script">
 				{`
 						(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

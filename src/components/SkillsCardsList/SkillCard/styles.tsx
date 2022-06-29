@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Root = styled.li`
     position: relative;
@@ -30,10 +31,11 @@ export const Description = styled.p`
     margin: 4px 0px 0px 0px;
 `;
 
-export const Icon = styled.img`
+export const Icon = styled(Image).attrs({
+	height: "20px",
+	width: "20px"
+})`
     position: absolute;
-    height: 20px;
-    width: 20px;
     top: 24px;
     right: 24px;
 `;

@@ -74,7 +74,6 @@ const ContactForm: NextComponentType = () => {
 						error={Boolean(errors?.email)}
 						onFocus={onFocus("email")}
 						{...register("email", {
-							onChange: (e) => console.log(e),
 							onBlur,
 							required: {
 								value: true,

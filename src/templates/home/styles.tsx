@@ -121,7 +121,7 @@ export const ListOfCompanies = styled.div`
     gap: 40px;
     margin: 124px 24px;
 
-    > img {
+    img {
         opacity: 0.2;
         height: 50px;
         aspect-ratio: 3/1;

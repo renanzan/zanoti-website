@@ -65,7 +65,11 @@ export const Form = styled.form`
     }
 `;
 
-export const Input = styled.input`
+type InputParams = {
+	error?: boolean;
+}
+
+export const Input = styled.input<InputParams>`
     border: none;
     background: #2D2E32;
     padding: 12px 24px;
@@ -82,11 +86,19 @@ export const Input = styled.input`
     }
 
     :focus {
-        outline: 1px solid var(--primary);
+			outline: 1px solid var(--primary);
     }
+
+		${({ error }) => error && css`
+			outline: 1px solid rgba(255, 92, 92, 0.4);
+
+			:focus {
+				outline: 1px solid #FF5C5C;
+			}
+		`}
 `;
 
-export const Textarea = styled.textarea`
+export const Textarea = styled.textarea<InputParams>`
     border: none;
     background: #2D2E32;
     resize: none;
@@ -107,17 +119,69 @@ export const Textarea = styled.textarea`
         color: rgba(255, 255, 255, 0.2);
         padding: 0px 4px;
     }
+
+		${({ error }) => error && css`
+			outline: 1px solid rgba(255, 92, 92, 0.4);
+
+			:focus {
+				outline: 1px solid #FF5C5C;
+			}
+		`}
+`;
+
+export const MessageLength = styled.span<InputParams>`
+	color: rgba(255, 255, 255, 0.2);
+	font-size: 12px;
+	margin: 0px;
+	text-align: end;
+
+	${({ error }) => error && css`
+		color: rgba(255, 92, 92, 0.6);
+	`}
+`;
+
+export const Footer = styled.div`
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+`;
+
+export const ErrorList = styled.ul`
+	flex: 1;
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	font-size: 12px;
+	margin-top: 8px;
+
+	>:not(:first-child) {
+		margin-top: 4px;
+	}
+`;
+
+type ErrorItemParams = {
+	errorInFocus: boolean;
+}
+
+export const ErrorItem = styled.ul<ErrorItemParams>`
+	color: rgba(255, 92, 92, 0.6);
+	padding: 0px;
+
+	${({ errorInFocus }) => errorInFocus && css`
+		color: #FF5C5C;
+	`}
 `;
 
 type SendButtonParams = {
-    loading?: boolean;
+	loading?: boolean;
 }
 
 export const SendButton = styled.button.attrs({
-    type: "submit"
-})<SendButtonParams>`
+	type: "submit"
+}) <SendButtonParams>`
     position: relative;
     display: flex;
+		align-self: flex-start;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--primary);
@@ -126,9 +190,9 @@ export const SendButton = styled.button.attrs({
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
     padding: 12px 24px;
-    width: fit-content;
-    margin-top: 32px;
-    align-self: flex-end;
+		margin-top: 32px;
+    width: 100%;
+		max-width: 220px;
     background: #25262A;
     border-radius: 2px;
     transition: 250ms;

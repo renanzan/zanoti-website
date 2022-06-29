@@ -66,6 +66,10 @@ const ContactForm: NextComponentType = () => {
 							required: {
 								value: true,
 								message: "* Nome — Campo Obrigatório"
+							},
+							maxLength: {
+								value: 55,
+								message: "O nome deve ter no máximo 55 caracteres"
 							}
 						})} />
 
@@ -82,6 +86,10 @@ const ContactForm: NextComponentType = () => {
 							pattern: {
 								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
 								message: "Endereço de email inválido"
+							},
+							maxLength: {
+								value: 320,
+								message: "O email deve ter no máximo 320 caracteres"
 							}
 						})} />
 				</div>
@@ -95,6 +103,10 @@ const ContactForm: NextComponentType = () => {
 						required: {
 							value: true,
 							message: "* Assunto — Campo Obrigatório"
+						},
+						maxLength: {
+							value: 70,
+							message: "O assunto deve ter no máximo 70 caracteres"
 						}
 					})} />
 
@@ -113,8 +125,8 @@ const ContactForm: NextComponentType = () => {
 							message: "A Mensagem deve ter no mínimo 40 caracteres"
 						},
 						maxLength: {
-							value: 1200,
-							message: "A Mensagem deve ter no máximo 1200 caracteres"
+							value: 3500,
+							message: "A Mensagem deve ter no máximo 3500 caracteres"
 						}
 					})} />
 

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+import { event } from "services/google-analytics";
 import CircularProgress from "components/CircularProgress";
 
 import * as S from "./styles";
@@ -31,12 +32,18 @@ const ContactForm: NextComponentType = () => {
 			await axios.post("/api/contact", data);
 
 			toast.success("Mensagem enviada com sucesso!", { theme: "colored" });
+
+			event({ action: "send-contact-email" });
 		} catch (err) {
 			console.error(err);
 			toast.error("Oops, A mensagem não foi enviada", { theme: "colored" });
 		} finally {
 			setLoading(false);
 		}
+	}
+
+	function handleClickSendMessage() {
+		event({ action: "request-send-contact-email" });
 	}
 
 	useEffect(() => {
@@ -148,7 +155,7 @@ const ContactForm: NextComponentType = () => {
 						</S.ErrorList>
 					)}
 
-					<S.SendButton loading={loading}>
+					<S.SendButton loading={loading} onClick={handleClickSendMessage}>
 						{loading ? (
 							<CircularProgress size={20} />
 						) : "Enviar mensagem!"}

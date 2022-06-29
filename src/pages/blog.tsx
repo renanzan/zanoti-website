@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
 import BlogTemplate from "templates/blog";
-import { getArticles } from "services/api";
+import { fetchArticles } from "services/dev-to";
 
 type BlogPageType = {
 	articles: Array<any>;
@@ -15,7 +15,7 @@ const BlogPage: NextPage<BlogPageType> = ({ articles }) => {
 
 export async function getStaticProps() {
 	try {
-		const { data } = await getArticles();
+		const { data } = await fetchArticles();
 
 		return { props: { articles: data } };
 	} catch (err) {

@@ -173,7 +173,7 @@ export const ErrorItem = styled.ul<ErrorItemParams>`
 `;
 
 type SendButtonParams = {
-	loading?: boolean;
+	$loading?: boolean;
 }
 
 export const SendButton = styled.button.attrs({
@@ -201,7 +201,7 @@ export const SendButton = styled.button.attrs({
         filter: brightness(1.3);
     }
 
-    ${({ loading }) => loading && css`
+    ${({ $loading }) => $loading && css`
         pointer-events: none;
         opacity: 0.5;
         filter: brightness(1.3);

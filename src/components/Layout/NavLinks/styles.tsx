@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 interface NavLinkProps {
-	current: boolean;
+	$current: boolean;
 }
 
 export const NavItemsContainer = styled.div`
@@ -34,7 +34,7 @@ export const NavLink = styled(motion.a) <NavLinkProps>`
 		color: #6EF2A3;
 	}
 
-	${({ current }) => current && css`
+	${({ $current }) => $current && css`
 		color: #6EF2A3;
 		margin: 0px;
 

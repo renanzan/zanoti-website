@@ -155,7 +155,7 @@ const ContactForm: NextComponentType = () => {
 						</S.ErrorList>
 					)}
 
-					<S.SendButton loading={loading} onClick={handleClickSendMessage}>
+					<S.SendButton $loading={loading} onClick={handleClickSendMessage}>
 						{loading ? (
 							<CircularProgress size={20} />
 						) : "Enviar mensagem!"}

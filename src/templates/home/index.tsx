@@ -46,12 +46,12 @@ const HomeTemplate: NextComponentType = () => {
 
 						<S.IntroductionTitle>Olá! Meu nome é Renan Zanoti</S.IntroductionTitle>
 
-						<S.Quote>Quando te oferecem uma assento em um foguete, você não pergunta qual assento. Você simplesmente embarca.</S.Quote>
+						<S.Quote>"Quando te oferecem uma assento em um foguete, você não pergunta qual assento. Você simplesmente embarca."</S.Quote>
 
 						<S.IntroductionDescription>
-							{`Sou profissional de Front-End e atualmente me especializo em ReactJS. Sou extremamente apaixonado pelo que faço e estou sempre buscando me aperfeiçoar. Tenho experiência na criação de aplicações e páginas web complexas do zero, bem como no manutenção e melhorias de aplicativos web.
+							{`Sou profissional de Front-End e atualmente me especializo em ReactJS. Sou extremamente apaixonado pelo que faço e estou sempre buscando me aperfeiçoar. Tenho experiência em criação de aplicações e páginas web complexas do zero, bem como no manutenção e melhorias de aplicativos web.
                             
-								Sou detalhista e organizado, procuro sempre criar interfaces extremamente intuitivas e de fácil usabilidade. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
+								Sou detalhista e organizado, procuro sempre criar interfaces intuitivas e de fácil usabilidade buscando seguir padrões de UI/UX. Gosto de manter o código limpo e bem documentado, esforço-me para tentar resolver problemas da melhor maneira possível.
 								
 								Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:`}
 						</S.IntroductionDescription>

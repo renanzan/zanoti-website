@@ -35,7 +35,7 @@ export const WaterMark = styled.span`
 	font-weight: 700;
 	font-size: 350px;
 	line-height: 135.02%;
-	opacity: 0.2;
+	opacity: 0.1;
 	z-index: 0;
 `;
 
@@ -64,6 +64,7 @@ export const Description = styled(motion.p).attrs({
 	font-size: 16px;
 	line-height: 150%;
 	letter-spacing: -0.035em;
+	white-space: pre-line;
 `;
 
 export const Video = styled(motion.video).attrs({
@@ -77,8 +78,8 @@ export const Video = styled(motion.video).attrs({
 
 export const MoreInfo = styled.div`
 	margin-top: 40px;
-	text-align: center;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 200%;
+	white-space: pre-line;
 `;

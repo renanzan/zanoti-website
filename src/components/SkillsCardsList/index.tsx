@@ -31,7 +31,7 @@ const SkillsCardsList: NextComponentType = () => {
 
 			<Link href="/projects" passHref>
 				<a>
-					<S.ShowProjects>Veja os projetos que estive envolvido</S.ShowProjects>
+					<S.ShowProjects>Veja alguns projetos em que atuei</S.ShowProjects>
 				</a>
 			</Link>
 		</S.Root>

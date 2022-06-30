@@ -130,6 +130,10 @@ export const CustomNavLinks = styled(NavLinks)`
 	flex-direction: column;
 	margin-top: 56px;
 
+	>* {
+		margin-left: 24px;
+	}
+
 	>:not(:first-child) {
 		margin-top: 24px;
 	}

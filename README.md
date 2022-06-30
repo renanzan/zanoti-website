@@ -1,23 +1,62 @@
-# Static export example
 
-This example show how to export to static HTML files your Next.js application fetching data from an API to generate a dynamic list of pages.
+<p align="center">
+  <a href="https://zanoti.dev">
+    <img src=".github/images/logo.png" alt="Logo Website" width="80" height="80">
+  </a>
 
-When trying to run `npm start` it will build and export your pages into the `out` folder and serve them on `localhost:5000`.
+  <h3 align="center">Portfólio - Renan Zanoti</h3>
 
-## Deploy your own
+  <p align="center" style="max-width:450px;margin:0px auto;">
+    Este projeto faz parte do meu currículo de habilidade, trata-se do código fonte do meu portfólio pessoal.
+    <br />
+    <a href="https://zanoti.dev"><strong>Acesse agora »</strong></a>
+    <br />
+    <br />
+    <a href="https://zanoti.dev/">View Demo</a>
+    ·
+    <a href="https://github.com/renanzan/zanoti-website/issues">Report Bug</a>
+  </p>
+</p>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-static-export)
+<div style="margin:40px 0px;display:flex;align-items:center;justify-content:center;">
+	<img
+		align="center"
+		src=".github/images/home-preview.png"
+		alt="Website Preview"
+		title="Website Preview"
+	style="display: inline-block; width: 100%; max-width: 600px;" />
+</div>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-static-export)
 
-## How to use
+## 💼 Tecnologias utilizadas
+Este projeto foi construído usando as seguintes tecnologias.
+- ReactJS
+- NextJS
+- styled-components
+- framer-motion
+- TypeScript
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## 👨‍💻 Autor
 
-```bash
-npx create-next-app --example with-static-export with-static-export-app
-# or
-yarn create next-app --example with-static-export with-static-export-app
-# or
-pnpm create next-app --example with-static-export with-static-export-app
-```
+:technologist: Renan Zanoti - Desenvolvedor front-end especialista em ReactJS.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/renanzan">
+        <img src="https://avatars.githubusercontent.com/u/5727960?v=4" width="100px;" alt="Foto do Renan Zanoti no GitHub"/><br>
+        <sub>
+          <b>Renan Zanoti</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+- Github: [@renanzan](https://github.com/renanzan)
+- Linkedin: [Renan Zanoti](https://www.linkedin.com/in/renanzan/)
+- Gmail: [rh.zanoti@gmail.com](mailto:rh.zanoti@gmail.com)
+
+## ⚙️ Demostração
+
+Você pode acessar a versão online [aqui](https://zanoti.dev).

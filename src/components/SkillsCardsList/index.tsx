@@ -1,6 +1,7 @@
 import { NextComponentType } from "next";
-import SkillCard from "./SkillCard";
+import Link from "next/link";
 
+import SkillCard from "./SkillCard";
 import * as S from "./styles";
 
 const SkillsCardsList: NextComponentType = () => {
@@ -28,7 +29,11 @@ const SkillsCardsList: NextComponentType = () => {
 					icon="/assets/icons/gps.svg" />
 			</S.SkillsList>
 
-			<S.ShowProjects>Veja os projetos que estive envolvido</S.ShowProjects>
+			<Link href="/projects" passHref>
+				<a>
+					<S.ShowProjects>Veja os projetos que estive envolvido</S.ShowProjects>
+				</a>
+			</Link>
 		</S.Root>
 	)
 }

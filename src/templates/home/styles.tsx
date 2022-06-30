@@ -120,6 +120,11 @@ export const CoverInfoContainer = styled.section`
 		color: var(--primary);
 		margin: 48px 0px 0px 0px;
 		font-family: 'Roboto Mono', monospace;
+		transition: 250ms;
+	
+		:hover {
+			filter: brightness(1.2);
+		}
 	}
 
 	@media (max-width:770px) {

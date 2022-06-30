@@ -52,6 +52,11 @@ export const SayHello = styled.div`
 
 		>a {
 				color: var(--primary);
+				transition: 250ms;
+	
+				:hover {
+					filter: brightness(1.2);
+				}
 		}
 
 		:not(:first-child) {
@@ -149,11 +154,11 @@ export const SocialLinks = styled.div`
 	>a {
 		margin-left: 24px;
 		transition: 250ms;
-	}
-
-	>a:hover {
-		svg {
-			fill: var(--primary);
+	
+		:hover {
+			svg {
+				fill: var(--primary);
+			}
 		}
 	}
 

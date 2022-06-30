@@ -14,14 +14,13 @@ const ProjectKderno: NextComponentType = () => {
 
 	function handleOpen() {
 		router.push("?current=kderno", undefined, { shallow: true });
-
-		setHeaderConfig({ blur: false, primaryColor: "#373939", simplified: true });
 	}
 
 	useEffect(() => {
 		if (!open) {
 			document.body.style.overflow = "auto";
 		} else {
+			setHeaderConfig({ blur: false, primaryColor: "#373939", simplified: true });
 			document.body.style.overflow = "hidden";
 		}
 	}, [open]);
@@ -39,13 +38,18 @@ const ProjectKderno: NextComponentType = () => {
 		);
 
 	return (
-		<S.Root onClick={handleOpen}>
+		<S.Root
+			onClick={handleOpen}
+			whileHover={{
+				y: -5,
+				transition: { duration: 0.25 },
+			}}>
 			<S.LogoContainer>
 				<Image src="/assets/icons/whitescale-kderno-logo.svg" layout="fill" />
 			</S.LogoContainer>
 
 			<S.Description layout="position">
-				O Kderno foi o primeiro projeto profisional que estive envolvido, com uma pequena equipe tivemos o desafio de desenvolver um editor de texto rico com blocos complexos...
+				O Kderno foi o primeiro projeto profisional que estive envolvido. Com uma pequena equipe de desenvolvedores tivemos o grande desafio de desenvolver um editor de texto rico...
 			</S.Description>
 		</S.Root>
 	);

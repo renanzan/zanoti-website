@@ -31,8 +31,16 @@ const OpenCard: NextComponentType = () => {
 				</S.LogoContainer>
 
 				<S.Description layout="position">
-					Uma plataforma criada para democratizar o estudo para concursos públicos, como o concurso para diplomata, reunindo vide-aulas, conteúdo escrito e simulados em um único sistema web...
+					{`A Clipping é uma plataforma React que reúne uma extensa gama de conteúdo para aulas EAD. O projeto já tinha grandes dimensões quando integrei a equipe, fui responsável pela manutenção e desenvolvimento de novas features da plataforma.`}
 				</S.Description>
+
+				<S.ImageContainer>
+					<Image src="/assets/images/clipping-preview.png" layout="fill" />
+				</S.ImageContainer>
+
+				<S.MoreInfo>
+					{`Coordenei o desenvolvimento de uma lib React para o Design System da plataforma baseado nos princípios do Atomic Design. Utilizamos o storybook para documentar os componentes e implementamos testes unitários para garantir o funcionamento de cada componente da biblioteca.`}
+				</S.MoreInfo>
 			</S.Content>
 		</S.Root>
 	);

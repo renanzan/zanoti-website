@@ -14,8 +14,6 @@ const ProjectClipping: NextComponentType = () => {
 
 	function handleOpen() {
 		router.push("?current=clipping", undefined, { shallow: true });
-
-		setHeaderConfig({ blur: false, primaryColor: "#2D2E32", secondaryColor: "#2D2E32", simplified: true });
 	}
 
 	useEffect(() => {
@@ -23,6 +21,7 @@ const ProjectClipping: NextComponentType = () => {
 			document.body.style.overflow = "auto";
 		} else {
 			document.body.style.overflow = "hidden";
+			setHeaderConfig({ blur: false, primaryColor: "#2D2E32", secondaryColor: "#2D2E32", simplified: true });
 		}
 	}, [open]);
 
@@ -39,13 +38,18 @@ const ProjectClipping: NextComponentType = () => {
 		);
 
 	return (
-		<S.Root onClick={handleOpen}>
+		<S.Root
+			onClick={handleOpen}
+			whileHover={{
+				y: -5,
+				transition: { duration: 0.25 },
+			}}>
 			<S.LogoContainer>
 				<Image src="/assets/icons/clipping-logo.svg" layout="fill" />
 			</S.LogoContainer>
 
 			<S.Description layout="position">
-				Uma plataforma criada para democratizar o estudo para concursos públicos, como o concurso para diplomata, reunindo vide-aulas, conteúdo escrito e simulados em um único sistema web...
+				A Clipping é uma plataforma React que reúne uma extensa gama de conteúdo para aulas EAD...
 			</S.Description>
 		</S.Root>
 	);

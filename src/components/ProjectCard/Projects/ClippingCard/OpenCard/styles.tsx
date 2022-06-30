@@ -36,7 +36,7 @@ export const WaterMark = styled.span`
 	font-weight: 700;
 	font-size: 350px;
 	line-height: 135.02%;
-	opacity: 0.1;
+	opacity: 0.05;
 	z-index: 0;
 `;
 
@@ -67,19 +67,25 @@ export const Description = styled(motion.p).attrs({
 	letter-spacing: -0.035em;
 `;
 
-export const Video = styled(motion.video).attrs({
+export const ImageContainer = styled(motion.image).attrs({
 	layoutId: "clipping-card-image"
 })`
+	position: relative;
 	width: 100%;
+	aspect-ratio: 1.6066/1;
 	border-radius: 8px;
 	box-shadow: 0px 30px 40px -13px rgba(36, 57, 66, 0.3);
 	margin-top: 16px;
+	border-radius: 8px;
+	border: 1px solid rgba(57, 56, 55, 0.1);
+	overflow: hidden;
+	margin-top: 40px;
 `;
 
 export const MoreInfo = styled.div`
 	margin-top: 40px;
-	text-align: center;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 200%;
+	white-space: pre-line;
 `;

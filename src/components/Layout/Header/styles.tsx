@@ -1,15 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 import DynamicLogo from "components/DynamicLogo";
 
-export const Root = styled(motion.header)`
+type RootParams = {
+	blur?: boolean;
+}
+
+export const Root = styled(motion.header) <RootParams>`
 	position: fixed;
 	display: flex;
 	align-items: center;
 	width: 100%;
 	z-index: 1000;
-	backdrop-filter: blur(20px);
+	transition: 250ms;
+
+	${({ blur }) => blur && css`
+		backdrop-filter: blur(20px);
+	`}
 `;
 
 export const LogoContainer = styled(motion.a)`
@@ -46,18 +54,24 @@ export const Menu = styled(motion.nav)`
 	}
 `;
 
-export const SocialLinks = styled.div`
+type SocialLinksParams = {
+	primary?: string;
+	show?: boolean;
+}
+
+export const SocialLinks = styled.div<SocialLinksParams>`
 	display: flex;
 	align-items: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: var(--secondary-text);
+	transition: 250ms;
 
 	> a {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
-		transition: 125ms;
+		transition: 250ms;
 
 		> svg {
 			height: 24px;
@@ -67,10 +81,10 @@ export const SocialLinks = styled.div`
 		}
 	
 		:hover {
-			color: var(--primary);
+			color: ${({ primary }) => primary || "var(--primary)"};
 
 			> svg {
-				fill: var(--primary);
+				fill: ${({ primary }) => primary || "var(--primary)"};
 			}
 		}
 	}
@@ -82,16 +96,24 @@ export const SocialLinks = styled.div`
 	@media (max-width: 624px) {
 		display: none;
 	}
+
+	${({ show }) => !show && css`
+		opacity: 0;
+	`}
 `;
 
-export const MailLink = styled(motion.a)`
+type MailLinkParams = {
+	primary?: string;
+}
+
+export const MailLink = styled(motion.a) <MailLinkParams>`
 	padding: 8px;
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 50%;
 
 	> svg {
 		margin: 0px !important;
-		fill: var(--primary) !important;
+		fill: ${({ primary }) => primary || "var(--primary)"} !important;
 	}
 
 	:hover {

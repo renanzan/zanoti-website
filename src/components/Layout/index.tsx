@@ -4,17 +4,10 @@ import Head from "next/head";
 
 import useWindowSize, { WindowSize } from "hooks/useWindowSize";
 import WaterMarkSection from "components/WaterMarkSection";
-import Header from "./Header";
 
 import * as S from "./styles";
+import Header, { defaultHeaderConfig, HeaderConfig } from "./Header";
 import Footer from "./Footer";
-
-type HeaderCustom = {
-	logo: {
-		primary: string;
-		secondary: string;
-	}
-}
 
 type ScrollWindow = {
 	direction?: "up" | "down";
@@ -22,17 +15,19 @@ type ScrollWindow = {
 }
 
 interface LayoutContext {
-	header?: HeaderCustom;
 	window: {
 		size: WindowSize;
 		scroll?: ScrollWindow;
 	};
-	setHeader: Dispatch<SetStateAction<HeaderCustom | undefined>>;
+	headerConfig: HeaderConfig;
+	setHeaderConfig: Dispatch<SetStateAction<HeaderConfig>>;
+	resetHeader: VoidFunction;
 }
 
 interface Props extends React.ParamHTMLAttributes<HTMLDivElement> {
 	title?: string;
 	waterMarkSection?: string;
+	configHeader?: HeaderConfig
 	children: React.ReactNode;
 	style?: React.CSSProperties;
 }
@@ -42,8 +37,12 @@ export const useLayout = () => useContext(LayoutContext);
 
 const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, children, ...rest }) => {
 	const windowSize = useWindowSize();
-	const [header, setHeader] = useState<undefined | HeaderCustom>();
+	const [headerConfig, setHeaderConfig] = useState<HeaderConfig>(defaultHeaderConfig);
 	const [scroll, setScroll] = useState<undefined | ScrollWindow>();
+
+	function resetHeader() {
+		setHeaderConfig(defaultHeaderConfig);
+	}
 
 	useEffect(() => {
 		let prevScroll: any = null;
@@ -65,13 +64,13 @@ const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, chi
 	}, []);
 
 	return (
-		<LayoutContext.Provider value={{ header, window: { size: windowSize, scroll }, setHeader }}>
+		<LayoutContext.Provider value={{ window: { size: windowSize, scroll }, headerConfig, setHeaderConfig, resetHeader }}>
 			<Head>
 				<title>{title || "Renan Zanoti"}</title>
 			</Head>
 
 			<S.Root>
-				<Header />
+				<Header config={headerConfig} />
 
 				{waterMarkSection && (
 					<WaterMarkSection>{waterMarkSection}</WaterMarkSection>

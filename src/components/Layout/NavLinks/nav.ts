@@ -8,12 +8,10 @@ export default [
 	{
 		label: "Início",
 		pathname: "/"
-	},
-	// {
-	// 	label: "Projetos",
-	// 	pathname: "/projects"
-	// },
-	{
+	}, {
+		label: "Projetos",
+		pathname: "/projects"
+	}, {
 		label: "Blog",
 		pathname: "/blog"
 	}, {

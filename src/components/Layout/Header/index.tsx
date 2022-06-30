@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NextComponentType } from "next";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
@@ -35,24 +35,50 @@ const item = {
 	hidden: { opacity: 0, y: -25 },
 };
 
-const Header: NextComponentType = () => {
-	const { header, window } = useLayout();
+export type HeaderConfig = {
+	blur?: boolean;
+	primaryColor?: string;
+	navLinks?: boolean;
+	socialLinks?: boolean;
+	simplified?: boolean;
+}
+
+type HeaderProps = {
+	config: HeaderConfig;
+}
+
+export const defaultHeaderConfig: HeaderConfig = {
+	blur: true,
+	primaryColor: "#6EF2A3",
+	navLinks: true,
+	socialLinks: true,
+	simplified: false
+}
+
+const Header: NextComponentType<{}, {}, HeaderProps> = ({ config }) => {
+	const { headerConfig, window } = useLayout();
 	const { scrollY } = useViewportScroll();
 
 	const [hidden, setHidden] = useState(false);
 	const prevScroll = useRef<number>(0);
 
-	const getRootAnimation = () => {
+	const getRootAnimation = useCallback(() => {
 		const padding = useTransform(scrollY, [100, 300], ["42px 80px", "12px 84px"]);
 		const boxShadow = useTransform(scrollY, [100, 300], ["0px 0px 0px rgba(0, 0, 0, 0)", "0 10px 30px -10px rgba(30, 30, 30, 0.7)"]);
 
-		const mobilePadding = useTransform(scrollY, [100, 300], ["16px 24px", "12px 16px"]);
+		const mobilePadding = useTransform(scrollY, [100, 300], ["16px 24px", "0px 0px 0px rgba(0, 0, 0, 0)"]);
+
+		const simplifiedPadding = useTransform(scrollY, [0, 0], ["12px 16px", "12px 16px"]);
+		const simplifiedBoxShadow = useTransform(scrollY, [0, 0], ["0px 0px 0px rgba(0, 0, 0, 0)", "0px 0px 0px rgba(0, 0, 0, 0)"]);
+
+		if (headerConfig.simplified)
+			return ({ padding: simplifiedPadding, boxShadow: simplifiedBoxShadow });
 
 		if (window.size.width < 600)
 			return ({ padding: mobilePadding });
 
 		return ({ padding, boxShadow });
-	}
+	}, [headerConfig.simplified]);
 
 	useEffect(() => {
 		function update(scroll: number) {
@@ -69,8 +95,9 @@ const Header: NextComponentType = () => {
 
 	return (
 		<S.Root
+			blur={config.blur}
 			style={getRootAnimation()}
-			animate={hidden ? "hidden" : "visible"}
+			animate={(hidden && !config.simplified) ? "hidden" : "visible"}
 			variants={headerVariants}
 			transition={{ type: "tween" }}>
 			<S.Menu
@@ -79,12 +106,12 @@ const Header: NextComponentType = () => {
 				variants={list}>
 
 				<S.LogoContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-					<S.Logo {...header?.logo} responsive={window.size.width < 800} />
+					<S.Logo primary={headerConfig.primaryColor} responsive={window.size.width < 800} />
 				</S.LogoContainer>
 
-				<NavLinks variants={item} />
+				<NavLinks show={config.navLinks} variants={item} />
 
-				<S.SocialLinks>
+				<S.SocialLinks show={config.socialLinks} primary={config.primaryColor}>
 					<Link href="https://github.com/renanzan" passHref>
 						<motion.a variants={item}><FaGithub size={24} /> Github</motion.a>
 					</Link>
@@ -94,7 +121,7 @@ const Header: NextComponentType = () => {
 					</Link>
 
 					<Link href="/contact" passHref>
-						<S.MailLink variants={item}><GoMail size={24} /></S.MailLink>
+						<S.MailLink primary={config.primaryColor} variants={item}><GoMail size={24} /></S.MailLink>
 					</Link>
 				</S.SocialLinks>
 			</S.Menu>

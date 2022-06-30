@@ -30,8 +30,17 @@ export const MoreInfo = styled.div`
 	max-width: 400px;
 	margin-top: 80px;
 	text-align: center;
+	transition: 250ms;
 
 	>strong {
 		color: var(--primary);
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	:hover {
+		filter: brightness(1.5);
 	}
 `;

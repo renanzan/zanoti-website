@@ -118,6 +118,15 @@ export const WebsiteDevInfo = styled.div`
 		font-size: 24px;
 	}
 
+	a {
+		text-decoration: none;
+		transition: 250ms;
+
+		:hover {
+			color: var(--primary);
+		}
+	}
+
 	@media (max-width:500px) {
 		text-align: center;
 	

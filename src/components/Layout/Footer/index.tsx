@@ -26,7 +26,7 @@ const Footer: NextComponentType = () => {
 				<section>
 					<S.WebsiteDevInfo>
 						<span>Site projetado e construído por Renan Zanoti</span>
-						<h3>rh.zanoti@gmail.com</h3>
+						<h3><a href="mailto:rh.zanoti@gmail.com">rh.zanoti@gmail.com</a></h3>
 					</S.WebsiteDevInfo>
 
 					<S.CustomNavLinks />

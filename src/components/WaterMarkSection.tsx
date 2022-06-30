@@ -10,6 +10,7 @@ const WaterMarkContainer = styled.div`
 	inset: 0px;
 	max-width: 2200px;
 	margin: 0px auto;
+	z-index: 0;
 `;
 
 const WaterMark = styled.h1`

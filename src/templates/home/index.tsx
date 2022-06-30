@@ -1,15 +1,20 @@
 import { NextComponentType } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { useLottie } from "lottie-react";
 
 import Layout from "components/Layout";
+import SkillsCardsList from "components/SkillsCardsList";
+import ContactForm from "components/ContactForm";
+import * as animationData from "@public/assets/animations/scroll-down-animation.json";
 
 import * as S from "./styles";
 import MyPhoto from "components/MyPhoto";
-import SkillsCardsList from "components/SkillsCardsList";
-import ContactForm from "components/ContactForm";
+import { ConnectParticles } from "components/ConnectParticles";
 
 const HomeTemplate: NextComponentType = () => {
+	const { View: ScrollAnimation } = useLottie({ animationData, loop: true })
+
 	return (
 		<Layout>
 			<S.Cover>
@@ -24,6 +29,12 @@ const HomeTemplate: NextComponentType = () => {
 				</S.CoverInfoContainer>
 
 				<MyPhoto />
+
+				<S.ScrollDownAnimationContainer>
+					{ScrollAnimation}
+				</S.ScrollDownAnimationContainer>
+
+				<ConnectParticles />
 			</S.Cover>
 
 			<S.Content>

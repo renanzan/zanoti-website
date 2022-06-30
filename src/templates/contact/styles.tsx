@@ -18,10 +18,12 @@ export const Content = styled.div`
 `;
 
 export const CardCointainer = styled.div`
+	position: relative;
 	padding: 40px;
 	border-radius: 32px;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
 	background: var(--background);
+	z-index: 1;
 `;
 
 export const MoreInfo = styled.div`

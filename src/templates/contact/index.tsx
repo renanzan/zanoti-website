@@ -13,6 +13,7 @@ const ContactTemplate: NextPage = () => {
 
 			<S.Content>
 				<S.CardCointainer>
+					Hello World
 					<ContactForm />
 				</S.CardCointainer>
 

@@ -30,19 +30,19 @@ mark {
 }
 
 ::-webkit-scrollbar {
-	width: 6px;
+	width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #21252F;
+	background: #393B40;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #363B48;
+	background: #1A1B1F;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #484D5C;
+	background: #737580;
 }
 
 :root {

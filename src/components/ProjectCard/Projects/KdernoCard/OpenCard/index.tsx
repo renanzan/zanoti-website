@@ -27,7 +27,7 @@ const OpenCard: NextComponentType = () => {
 
 			<S.Content>
 				<S.LogoContainer>
-					<Image src="/assets/icons/kderno-logo.svg" layout="fill" />
+					<Image src="/assets/icons/whitescale-kderno-logo.svg" layout="fill" />
 				</S.LogoContainer>
 
 				<S.Description layout="position">

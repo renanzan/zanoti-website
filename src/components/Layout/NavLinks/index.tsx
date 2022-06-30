@@ -23,7 +23,10 @@ const NavLinks: NextComponentType<{}, {}, NavLinksProps> = ({ variants, show, cl
 		<S.NavItemsContainer show={show} className={className}>
 			{navLinks.map((link, key) => (
 				<Link key={key} href={link.pathname} passHref>
-					<S.NavLink primary={headerConfig.primaryColor} variants={variants} $current={checkCurrent(link.pathname)}>
+					<S.NavLink
+						variants={variants}
+						primary={headerConfig.primaryColor}
+						$current={checkCurrent(link.pathname)}>
 						<label>{link.label}</label>
 					</S.NavLink>
 				</Link>

@@ -68,9 +68,9 @@ const HomeTemplate: NextComponentType = () => {
 				</S.Introduction>
 
 				<S.ListOfCompanies>
-					<Image src="/assets/icons/mentora-logo.svg" height="50px" width="150px" />
-					<Image src="/assets/icons/clipping-logo.svg" height="50px" width="150px" />
-					<Image src="/assets/icons/kderno-logo.svg" height="50px" width="150px" />
+					<Image src="/assets/icons/whitescale-kderno-logo.svg" height="50px" width="150px" />
+					<Image src="/assets/icons/whitescale-clipping-logo.svg" height="50px" width="150px" />
+					<Image src="/assets/icons/whitescale-mentora-logo.svg" height="50px" width="150px" />
 				</S.ListOfCompanies>
 
 				<ContactForm />

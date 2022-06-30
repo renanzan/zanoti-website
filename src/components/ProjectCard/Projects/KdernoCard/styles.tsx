@@ -32,7 +32,7 @@ export const LogoContainer = styled(motion.div).attrs({
 export const Description = styled(motion.p).attrs({
 	layoutId: "kderno-card-description"
 })`
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 150%;
 	letter-spacing: -0.035em;
 `;

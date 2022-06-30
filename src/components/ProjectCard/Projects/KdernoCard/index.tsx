@@ -41,7 +41,7 @@ const ProjectKderno: NextComponentType = () => {
 	return (
 		<S.Root onClick={handleOpen}>
 			<S.LogoContainer>
-				<Image src="/assets/icons/kderno-logo.svg" layout="fill" />
+				<Image src="/assets/icons/whitescale-kderno-logo.svg" layout="fill" />
 			</S.LogoContainer>
 
 			<S.Description layout="position">

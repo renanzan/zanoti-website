@@ -12,10 +12,8 @@ export const Root = styled.div`
 `;
 
 export const Main = styled.main`
-  position: relative;
 	flex: 1;
   display: flex;
   flex-direction: column;
 	overflow-x: hidden;
-	z-index: 1;
 `;

@@ -2,14 +2,15 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const Root = styled(motion.div).attrs({
-	layoutId: "kderno-card"
+	layoutId: "clipping-card"
 })`
 	position: fixed;
 	inset: 0px;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	background: #55C9FF;
+	background: #FFFFFF;
+	color: #2D2E32;
 	user-select: none;
 	font-family: 'Inter', sans-serif;
 	overflow: auto;
@@ -35,7 +36,7 @@ export const WaterMark = styled.span`
 	font-weight: 700;
 	font-size: 350px;
 	line-height: 135.02%;
-	opacity: 0.2;
+	opacity: 0.1;
 	z-index: 0;
 `;
 
@@ -51,7 +52,7 @@ export const Content = styled.div`
 `;
 
 export const LogoContainer = styled(motion.div).attrs({
-	layoutId: "kderno-card-logo"
+	layoutId: "clipping-card-logo"
 })`
 	position: relative;
 	height: 80px;
@@ -59,7 +60,7 @@ export const LogoContainer = styled(motion.div).attrs({
 `;
 
 export const Description = styled(motion.p).attrs({
-	layoutId: "kderno-card-description"
+	layoutId: "clipping-card-description"
 })`
 	font-size: 16px;
 	line-height: 150%;
@@ -67,7 +68,7 @@ export const Description = styled(motion.p).attrs({
 `;
 
 export const Video = styled(motion.video).attrs({
-	layoutId: "kderno-card-image"
+	layoutId: "clipping-card-image"
 })`
 	width: 100%;
 	border-radius: 8px;

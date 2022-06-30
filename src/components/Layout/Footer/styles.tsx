@@ -3,12 +3,10 @@ import styled from "styled-components";
 import NavLinks from "../NavLinks";
 
 export const Root = styled.footer`
-	position: relative;
 	display: flex;
 	justify-content: center;
 	background: #222225;
 	box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
-	z-index: 1;
 `;
 
 export const Content = styled.div`

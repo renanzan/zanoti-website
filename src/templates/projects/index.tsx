@@ -19,12 +19,12 @@ const ProjectsTemplate = () => {
 							<ProjectKderno />
 						</ProjectCard>
 
-						{/* <ProjectCard
+						<ProjectCard
 							tags={["react", "nextjs", "design system"]}>
 							<ProjectClipping />
 						</ProjectCard>
 
-						<ProjectCard
+						{/* <ProjectCard
 							tags={["react", "nextjs"]}>
 							<ProjectMentora />
 						</ProjectCard> */}

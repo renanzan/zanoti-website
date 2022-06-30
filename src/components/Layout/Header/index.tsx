@@ -63,12 +63,14 @@ const Header: NextComponentType<{}, {}, HeaderProps> = ({ config }) => {
 				animate="visible"
 				variants={list}>
 
-				<S.LogoContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-					<S.Logo
-						primary={headerConfig.primaryColor}
-						secondary={headerConfig.secondaryColor}
-						responsive={window.size.width < 800} />
-				</S.LogoContainer>
+				<Link href="/">
+					<S.LogoContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+						<S.Logo
+							primary={headerConfig.primaryColor}
+							secondary={headerConfig.secondaryColor}
+							responsive={window.size.width < 800} />
+					</S.LogoContainer>
+				</Link>
 
 				<NavLinks show={config.navLinks} variants={item} />
 

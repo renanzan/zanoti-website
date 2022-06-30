@@ -13,7 +13,7 @@ import MyPhoto from "components/MyPhoto";
 import { ConnectParticles } from "components/ConnectParticles";
 
 const HomeTemplate: NextComponentType = () => {
-	const { View: ScrollAnimation } = useLottie({ animationData, loop: true })
+	const { View: ScrollAnimation } = useLottie({ animationData, loop: true });
 
 	return (
 		<Layout>

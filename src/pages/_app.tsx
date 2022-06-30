@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import "../../public/styles/globals.css";
+
 import GAPageView from "components/GAPageView";
 
 export default function App({ Component, pageProps }: AppProps) {

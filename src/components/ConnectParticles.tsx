@@ -18,8 +18,6 @@ export function ConnectParticles() {
 		wrapper.style.zIndex = "0";
 		canvas.style.position = "absolute";
 		canvas.style.inset = "0px";
-
-		console.log({ wrapper, canvas });
 	}
 
 	async function particlesInit(engine: Engine) {

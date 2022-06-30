@@ -20,7 +20,9 @@ const MyPhoto: NextComponentType = () => {
 			<Image
 				src="/assets/images/photo.png"
 				layout="fill"
-				style={{ zIndex: 2 }} />
+				style={{ zIndex: 2 }}
+				priority
+				quality={100} />
 
 			<S.FloatingSphere
 				x="calc(100% - 80px)"

@@ -29,6 +29,7 @@ export const Content = styled.div`
 		flex-direction: column;
 		padding: 48px 24px;
 		width: fit-content;
+		text-align: center;
 		gap: 8px;
 
 		>section {
@@ -45,6 +46,7 @@ export const SayHello = styled.div`
 	>h2 {
 		margin: 0px;
 		font-weight: 400;
+		font-size: 24px;
 
 		>a {
 				color: var(--primary);
@@ -52,6 +54,11 @@ export const SayHello = styled.div`
 
 		:not(:first-child) {
 				margin-top: 16px;
+		}
+
+		@media (max-width:500px) {
+			font-size: 16px;
+			text-align: center;
 		}
 	}
 `;
@@ -82,7 +89,7 @@ export const MobileSiteRights = styled(SiteRights)`
 	@media (max-width:900px) {
 		display: flex;
 		flex-direction: column;
-		margin-top: 16px;
+		margin-top: 24px;
 
 		> svg {
 			width: 120px;
@@ -104,6 +111,18 @@ export const WebsiteDevInfo = styled.div`
 	>h3 {
 		margin: 8px 0px 0px 0px;
 		font-size: 24px;
+	}
+
+	@media (max-width:500px) {
+		text-align: center;
+	
+		>span {
+			font-size: 12px;
+		}
+
+		>h3 {
+			font-size: 16px;
+		}
 	}
 `;
 
@@ -133,7 +152,7 @@ export const SocialLinks = styled.div`
 	}
 
 	@media (max-width:900px) {
-		margin: 8px 0px 24px 0px;
+		margin: 32px 0px;
 		justify-content: center;
 
 		>:first-child {

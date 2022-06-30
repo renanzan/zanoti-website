@@ -13,6 +13,10 @@ const ContactTemplate: NextPage = () => {
 
 			<S.Content>
 				<ContactForm />
+
+				<S.MoreInfo>
+					Você também pode me enviar um email mais elaborado para <strong>rh.zanoti@gmail.com</strong>
+				</S.MoreInfo>
 			</S.Content>
 		</Layout>
 	)

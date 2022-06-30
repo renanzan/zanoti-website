@@ -20,9 +20,12 @@ export const Root = styled.div`
 	align-self: center;
 	min-width: 256px;
 	aspect-ratio: 1/1;
+	pointer-events: none;
+	user-select: none;
 
 	@media (max-width:450px) {
-		min-width: 150px;
+		transform: scale(0.8);
+		margin: -10%;
 	}
 `;
 

@@ -8,6 +8,8 @@ import { event } from "services/google-analytics";
 import CircularProgress from "components/CircularProgress";
 
 import * as S from "./styles";
+import moment from "moment";
+import EmailSent from "./EmailSent";
 
 type FormValues = {
 	name: string;
@@ -21,6 +23,7 @@ const ContactForm: NextComponentType = () => {
 	const [elementOnFocus, setElementOnFocus] = useState<undefined | keyof FormValues>();
 	const [message, setMessage] = useState<undefined | string>("");
 	const [loading, setLoading] = useState(false);
+	const [recentlySentEmail, setRecentlySentEmail] = useState<undefined | moment.Moment>();
 
 	const onFocus = (key: keyof FormValues) => () => setElementOnFocus(key);
 	const onBlur = () => setElementOnFocus(undefined);
@@ -34,6 +37,11 @@ const ContactForm: NextComponentType = () => {
 			toast.success("Mensagem enviada com sucesso!", { theme: "colored" });
 
 			event({ action: "send-contact-email" });
+
+			const now = new Date();
+
+			localStorage.setItem("@zanoti.dev/email-sent", now.toISOString());
+			setRecentlySentEmail(moment(now));
 		} catch (err) {
 			console.error(err);
 			toast.error("Oops, A mensagem não foi enviada", { theme: "colored" });
@@ -51,6 +59,31 @@ const ContactForm: NextComponentType = () => {
 
 		return () => countCharacters.unsubscribe();
 	}, [watch]);
+
+	useEffect(() => {
+		function checkEmailSend() {
+			let emailSendDate: string | moment.Moment | null = localStorage.getItem("@zanoti.dev/email-sent");
+
+			if (!emailSendDate)
+				return;
+
+			const dateLimit = moment(new Date()).add(3, "d");
+			emailSendDate = moment(emailSendDate);
+
+			const dateCountdown = dateLimit.diff(emailSendDate, "d");
+
+			if (dateCountdown > 0)
+				return setRecentlySentEmail(emailSendDate);
+
+			localStorage.removeItem("@zanoti.dev/email-sent");
+			setRecentlySentEmail(undefined);
+		}
+
+		checkEmailSend();
+	}, []);
+
+	if (recentlySentEmail)
+		return (<EmailSent date={recentlySentEmail} />);
 
 	return (
 		<S.Root>

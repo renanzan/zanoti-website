@@ -35,6 +35,10 @@ export const Title = styled.h2`
 		text-align: center;
     color: var(--primary);
     margin: 0px;
+
+		@media (max-width:500px) {
+			font-size: 28px;
+		}
 `;
 
 export const Message = styled.p`
@@ -219,28 +223,4 @@ export const SendButton = styled.button.attrs({
 		@media (max-width:480px) {
 			max-width: unset;
 		}
-`;
-
-export const CircleLoadingContainer = styled.svg.attrs({
-	viewBox: "0 0 36 36"
-})`
-	display: block;
-    margin: 10px auto;
-    max-height: 250px;
-    fill: green;
-    animation: ${Rotation} 1s ease-in-out infinite;
-`;
-
-export const CircleLoading = styled.path.attrs({
-	d: `M18 2.0845
-		a 15.9155 15.9155 0 0 1 0 31.831
-		a 15.9155 15.9155 0 0 1 0 -31.831`
-})`
-	stroke: orange;
-    fill: red;
-    stroke-width: 2.8;
-    stroke-linecap: round;
-    animation: ${Indeterminate} 1s ease-in-out infinite alternate-reverse;
-    height: 40px;
-    width: 40px;
 `;

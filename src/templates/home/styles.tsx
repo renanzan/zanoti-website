@@ -9,25 +9,35 @@ const scrollAnimation = keyframes`
 export const Cover = styled.div`
 	position: relative;
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	background: #2D2E32;
-	padding: 180px 80px 80px 24px;
+	padding: 240px 80px 180px 24px;
 	gap: 124px;
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 
-	@media (max-height:1080px) {
+	@media (max-height:1440px) {
 		height: 100vh;
 		align-items: center;
+		padding: 0px;
 	}
 
 	@media (max-width:770px) {
 		flex-direction: column-reverse;
-		padding: 120px 24px 80px 24px;
+		padding: 120px 40px 120px 40px;
 		gap: 64px;
 	}
 
+	@media (max-height:1440px) and (max-width:770px) {
+		padding: 0px;
+	}
+
 	@media (max-width:450px) {
-		padding: 120px 24px 80px 24px;
+		padding: 88px 24px 120px 24px;
+	}
+
+	@media (max-height:1440px) and (max-width:450px) {
+		padding: 0px;
 	}
 `;
 
@@ -47,6 +57,10 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+
+		@media (max-width:1599px) {
+			display: none;
+		}
 	}
 
 	:after {
@@ -57,6 +71,10 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+
+		@media (max-width:1599px) {
+			display: none;
+		}
 	}
 
 	>h1 {
@@ -71,6 +89,10 @@ export const CoverInfoContainer = styled.section`
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+
+			@media (max-width:1599px) {
+				display: none;
+			}
 		}
 	}
 
@@ -87,16 +109,26 @@ export const CoverInfoContainer = styled.section`
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+
+			@media (max-width:1599px) {
+				display: none;
+			}
 		}
 	}
 
 	>a {
 		color: var(--primary);
 		margin: 48px 0px 0px 0px;
+		font-family: 'Roboto Mono', monospace;
 	}
 
 	@media (max-width:770px) {
 		max-width: fit-content;
+		align-items: center;
+
+		>p, >h1, >a {
+			text-align: center;
+		}
 	}
 `;
 
@@ -153,6 +185,10 @@ export const IntroductionTitle = styled.h3`
 	font-size: 40px;
 	font-weight: 400;
 	margin: 20px 0px 16px 0px;
+
+	@media (max-width:500px) {
+		font-size: 28px;
+	}
 `;
 
 export const Quote = styled.p`

@@ -13,6 +13,7 @@ export const Root = styled(motion.header)`
 `;
 
 export const LogoContainer = styled(motion.a)`
+	display: flex;
 	margin-right: 104px;
 
 	@media (max-width: 1240px) {
@@ -21,6 +22,11 @@ export const LogoContainer = styled(motion.a)`
 
 	@media (max-width: 900px) {
 		flex: 1;
+	}
+
+	@media (max-width:599px) {
+		justify-content: center;
+		margin: 0px;
 	}
 `;
 
@@ -44,6 +50,7 @@ export const SocialLinks = styled.div`
 	display: flex;
 	align-items: center;
 	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
 	color: var(--secondary-text);
 
 	> a {
@@ -74,5 +81,20 @@ export const SocialLinks = styled.div`
 
 	@media (max-width: 624px) {
 		display: none;
+	}
+`;
+
+export const MailLink = styled(motion.a)`
+	padding: 8px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+
+	> svg {
+		margin: 0px !important;
+		fill: var(--primary) !important;
+	}
+
+	:hover {
+		background: rgba(255, 255, 255, 0.1);
 	}
 `;

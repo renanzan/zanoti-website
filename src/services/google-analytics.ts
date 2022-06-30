@@ -1,5 +1,5 @@
 export function pageview(url: string) {
-	if (window === undefined)
+	if (window?.gtag === undefined)
 		return;
 
 	window.gtag("config", "G-3WYVWTWSKD", {
@@ -13,7 +13,7 @@ type EventHandler = {
 }
 
 export function event({ action, params }: EventHandler) {
-	if (window === undefined)
+	if (window?.gtag === undefined)
 		return;
 
 	window.gtag("event", action, params);

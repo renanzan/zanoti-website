@@ -1,6 +1,6 @@
 import { NextComponentType } from "next";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDev } from "react-icons/fa";
 
 import DynamicLogo from "components/DynamicLogo";
 
@@ -38,6 +38,10 @@ const Footer: NextComponentType = () => {
 
 						<Link href="https://www.linkedin.com/in/renanzan/" passHref>
 							<a><FaLinkedin size={24} /></a>
+						</Link>
+
+						<Link href="https://dev.to/renanzan" passHref>
+							<a><FaDev size={24} /></a>
 						</Link>
 					</S.SocialLinks>
 				</section>

@@ -49,9 +49,9 @@ const HomeTemplate: NextComponentType = () => {
 						<S.Quote>"Quando te oferecem uma assento em um foguete, você não pergunta qual assento. Você simplesmente embarca."</S.Quote>
 
 						<S.IntroductionDescription>
-							{`Sou profissional de Front-End e atualmente me especializo em ReactJS. Sou extremamente apaixonado pelo que faço e estou sempre buscando me aperfeiçoar. Tenho experiência em criação de aplicações e páginas web complexas do zero, bem como no manutenção e melhorias de aplicativos web.
+							{`Sou profissional de front-end, possuo quase 4 anos de experiência na área. Durante esse tempo trabalhei com diversas tecnologias e busquei me aperfeiçoar no desenvolvimento de páginas e aplicações web, atualmente me especializo em ReactJS. Extremamente apaixonado pelo que faço, estou sempre em busca de aperfeiçoamento e desenvolvimento técnico e pessoal.
                             
-								Sou detalhista e organizado, procuro sempre criar interfaces intuitivas e de fácil usabilidade buscando seguir padrões de UI/UX. Gosto de manter o código limpo e bem documentado, esforço-me para tentar resolver problemas da melhor maneira possível.
+														Além do conhecimento técnico, possuo como qualidades, organização e perfeccionismo, o que me permite criar interfaces intuitivas e de fácil usabilidade ao usuário final. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
 								
 								Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:`}
 						</S.IntroductionDescription>

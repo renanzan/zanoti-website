@@ -10,12 +10,12 @@ const SkillsCardsList: NextComponentType = () => {
 			<S.SkillsList>
 				<SkillCard
 					title="Design"
-					description="Experiência com protótipos no Figma e em desenvolvimento de design systems"
+					description="Experiência com protótipos no Figma e no desenvolvimento de design systems"
 					icon="/assets/icons/figma.svg" />
 
 				<SkillCard
 					title="Front-End"
-					description="Sou especialista em desenvolvimento React, escrevo código limpo e organizado"
+					description="Especialista em desenvolvimento React, procuro sempre escrever código limpo e organizado"
 					icon="/assets/icons/code.svg" />
 
 				<SkillCard
@@ -25,7 +25,7 @@ const SkillsCardsList: NextComponentType = () => {
 
 				<SkillCard
 					title="SEO"
-					description="Impulsione sua página com SEO otimizado."
+					description="Prática na implementação de técnicas para otimizar SEO."
 					icon="/assets/icons/gps.svg" />
 			</S.SkillsList>
 

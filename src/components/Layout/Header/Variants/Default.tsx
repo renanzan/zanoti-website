@@ -22,10 +22,16 @@ const Root = styled(motion.div).attrs({
 	width: 100%;
 	z-index: 1000;
 	transition: 250ms;
+	background: #2D2E32;
 
-	${({ blur }) => blur && css`
-		backdrop-filter: blur(20px);
-	`}
+	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+		background: transparent;
+
+		${({ blur }) => blur && css`
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+		`}
+	}
 `;
 
 const headerVariants = {

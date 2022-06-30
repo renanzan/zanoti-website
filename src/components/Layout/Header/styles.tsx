@@ -7,19 +7,6 @@ type RootParams = {
 	blur?: boolean;
 }
 
-export const Root = styled(motion.header) <RootParams>`
-	position: fixed;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	z-index: 1000;
-	transition: 250ms;
-
-	${({ blur }) => blur && css`
-		backdrop-filter: blur(20px);
-	`}
-`;
-
 export const LogoContainer = styled(motion.a)`
 	display: flex;
 	margin-right: 104px;

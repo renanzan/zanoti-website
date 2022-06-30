@@ -109,11 +109,11 @@ const Header: NextComponentType<{}, {}, HeaderProps> = ({ config }) => {
 
 				<S.SocialLinks show={config.socialLinks} primary={config.primaryColor}>
 					<Link href="https://github.com/renanzan" passHref>
-						<motion.a variants={item}><FaGithub size={24} /> Github</motion.a>
+						<motion.a variants={item} target="_blank"><FaGithub size={24} /> Github</motion.a>
 					</Link>
 
 					<Link href="https://www.linkedin.com/in/renanzan/" passHref>
-						<motion.a variants={item}><FaLinkedin size={24} /> Linkedin</motion.a>
+						<motion.a variants={item} target="_blank"><FaLinkedin size={24} /> Linkedin</motion.a>
 					</Link>
 
 					<Link href="/contact" passHref>

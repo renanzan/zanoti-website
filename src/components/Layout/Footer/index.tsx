@@ -33,15 +33,15 @@ const Footer: NextComponentType = () => {
 
 					<S.SocialLinks>
 						<Link href="https://github.com/renanzan" passHref>
-							<a><FaGithub size={24} /></a>
+							<a target="_blank"><FaGithub size={24} /></a>
 						</Link>
 
 						<Link href="https://www.linkedin.com/in/renanzan/" passHref>
-							<a><FaLinkedin size={24} /></a>
+							<a target="_blank"><FaLinkedin size={24} /></a>
 						</Link>
 
 						<Link href="https://dev.to/renanzan" passHref>
-							<a><FaDev size={24} /></a>
+							<a target="_blank"><FaDev size={24} /></a>
 						</Link>
 					</S.SocialLinks>
 				</section>

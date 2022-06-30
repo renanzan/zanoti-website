@@ -8,6 +8,7 @@ import { GoMail } from "react-icons/go";
 import { useLayout } from "..";
 import NavLinks from "../NavLinks";
 import * as S from "./styles";
+import HeaderVariants from "./Variants";
 
 const headerVariants = {
 	visible: { y: "0%" },
@@ -94,12 +95,7 @@ const Header: NextComponentType<{}, {}, HeaderProps> = ({ config }) => {
 	}, []);
 
 	return (
-		<S.Root
-			blur={config.blur}
-			style={getRootAnimation()}
-			animate={(hidden && !config.simplified) ? "hidden" : "visible"}
-			variants={headerVariants}
-			transition={{ type: "tween" }}>
+		<HeaderVariants>
 			<S.Menu
 				initial="hidden"
 				animate="visible"
@@ -125,7 +121,7 @@ const Header: NextComponentType<{}, {}, HeaderProps> = ({ config }) => {
 					</Link>
 				</S.SocialLinks>
 			</S.Menu>
-		</S.Root>
+		</HeaderVariants>
 	);
 }
 

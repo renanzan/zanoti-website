@@ -30,7 +30,7 @@ const OpenCard: NextComponentType = () => {
 					<Image src="/assets/icons/kderno-logo.svg" layout="fill" />
 				</S.LogoContainer>
 
-				<S.Description>
+				<S.Description layout="position">
 					O Kderno foi o primeiro projeto profisional que estive envolvido, com uma pequena equipe tivemos o desafio de desenvolver um editor de texto rico com blocos complexos. Foi uma experiência muito desafiadora, tivemos que lidar com problemas não muito comuns, como a manipulação do caret para transicionar entre múltiplos inputs ao comando das seta do teclado, para passar a senação de um editor fluido, até problemas envolvendo estrutura de dados, buscando definir as melhores formas de persistir os dados desse editor rico no banco de dados. No final, o saldo foi positivo, com erros, acertos e muito aprendizado.
 				</S.Description>
 

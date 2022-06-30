@@ -10,4 +10,8 @@ export const ArticlesContainer = styled.div`
     max-width: 1400px;
     align-self: center;
     margin-bottom: 180px;
+
+		@media (max-width:650px) {
+			margin-top: 150px;
+		}
 `;

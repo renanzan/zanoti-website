@@ -4,12 +4,9 @@ export const RecentlySentEmailMessage = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: var(--background);
-	padding: 40px;
-	border-radius: 32px;
-	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
 
 	>h2 {
+		text-align: center;
 		color: var(--primary);
 		margin: 0px;
 	}
@@ -22,6 +19,7 @@ export const RecentlySentEmailMessage = styled.div`
 	}
 
 	>span {
+		text-align: center;
 		font-family: 'Roboto', sans-serif;
 		font-size: 14px;
 		color: rgba(255, 255, 255, 0.5);

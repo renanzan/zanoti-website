@@ -13,18 +13,18 @@ type BlogTemplateType = {
 const BlogTemplate: NextPage<BlogTemplateType> = ({ articles }) => {
 	return (
 		<Layout
-            title="Renan Zanoti ― Blog"
-            waterMarkSection="Blog">
+			title="Renan Zanoti ― Blog"
+			waterMarkSection="Blog">
 
-            <S.ArticlesContainer>
-                {articles.map((article, idx) => (
-                    <Post key={idx} article={article} />
-                ))}
+			<S.ArticlesContainer>
+				{articles.map((article, idx) => (
+					<Post key={idx} article={article} />
+				))}
 
-                {(3-articles.length > 0) && [...Array(3-articles.length)].map((_, key) => (
-                    <ComingSoonPost />
-                ))}
-            </S.ArticlesContainer>
+				{(3 - articles.length > 0) && [...Array(3 - articles.length)].map((_, key) => (
+					<ComingSoonPost />
+				))}
+			</S.ArticlesContainer>
 		</Layout>
 	)
 }

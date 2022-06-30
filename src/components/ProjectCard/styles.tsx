@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const ProjectCardItem = styled.li``;
+export const ProjectCardItem = styled.li`
+	max-width: 100%;
+`;
 
 export const Content = styled.div`
 	height: 300px;
 	width: 328px;
+	max-width: 100%;
 `;
 
 export const TagList = styled.ul`

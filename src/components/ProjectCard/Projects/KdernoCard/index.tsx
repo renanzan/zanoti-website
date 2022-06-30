@@ -44,7 +44,7 @@ const ProjectKderno: NextComponentType = () => {
 				<Image src="/assets/icons/kderno-logo.svg" layout="fill" />
 			</S.LogoContainer>
 
-			<S.Description>
+			<S.Description layout="position">
 				O Kderno foi o primeiro projeto profisional que estive envolvido, com uma pequena equipe tivemos o desafio de desenvolver um editor de texto rico com blocos complexos...
 			</S.Description>
 		</S.Root>

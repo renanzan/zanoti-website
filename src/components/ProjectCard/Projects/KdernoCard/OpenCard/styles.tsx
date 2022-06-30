@@ -14,6 +14,7 @@ export const Root = styled(motion.div).attrs({
 	font-family: 'Inter', sans-serif;
 	overflow: auto;
 	min-height: 100vh;
+	overflow-x: hidden;
 `;
 
 export const CloseButton = styled.button`

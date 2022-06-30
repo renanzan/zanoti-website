@@ -12,7 +12,9 @@ const ContactTemplate: NextPage = () => {
 			waterMarkSection="Contato">
 
 			<S.Content>
-				<ContactForm />
+				<S.CardCointainer>
+					<ContactForm />
+				</S.CardCointainer>
 
 				<S.MoreInfo>
 					Você também pode me enviar um email mais elaborado para <strong>rh.zanoti@gmail.com</strong>

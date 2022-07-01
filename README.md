@@ -9,22 +9,24 @@
   <p align="center" style="max-width:450px;margin:0px auto;">
     Este projeto faz parte do meu currículo de habilidade, trata-se do código fonte do meu portfólio pessoal.
     <br />
-    <a href="https://zanoti.dev"><strong>Acesse agora »</strong></a>
+    <a href="https://zanoti.dev" target="_blank"><strong>Acesse agora »</strong></a>
     <br />
     <br />
-    <a href="https://zanoti.dev/">View Demo</a>
+    <a href="https://zanoti.dev/ target="_blank"">View Demo</a>
     ·
     <a href="https://github.com/renanzan/zanoti-website/issues">Report Bug</a>
   </p>
 </p>
 
 <div style="margin:40px 0px;display:flex;align-items:center;justify-content:center;">
-	<img
-		align="center"
-		src=".github/images/home-preview.png"
-		alt="Website Preview"
-		title="Website Preview"
-	style="display: inline-block; width: 100%; max-width: 600px;" />
+	<a href="https://zanoti.dev" target="_blank">
+		<img
+			align="center"
+			src=".github/images/home-preview.png"
+			alt="Website Preview"
+			title="Website Preview"
+		style="display: inline-block; width: 100%; max-width: 600px;" />
+	</a>
 </div>
 
 

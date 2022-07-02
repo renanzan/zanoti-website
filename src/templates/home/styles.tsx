@@ -6,49 +6,13 @@ const scrollAnimation = keyframes`
 	100% { transform: translateY(-10px) }
 `;
 
-export const Cover = styled.div`
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #2D2E32;
-	padding: 240px 80px 180px 24px;
-	gap: 124px;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+export const Cover = styled.div.attrs({
+	className: "relative flex flex-col-reverse items-center justify-center bg-background-light py-24 px-4 gap-16 shadow-md min-h-screen md:px-12 md:gap-20 lg:gap-40 lg:flex-row"
+})``;
 
-	@media (max-height:1440px) {
-		height: 100vh;
-		align-items: center;
-		padding: 0px;
-	}
-
-	@media (max-width:770px) {
-		flex-direction: column-reverse;
-		padding: 120px 40px 120px 40px;
-		gap: 64px;
-	}
-
-	@media (max-height:1440px) and (max-width:770px) {
-		padding: 0px;
-	}
-
-	@media (max-width:450px) {
-		padding: 88px 24px 120px 24px;
-	}
-
-	@media (max-height:1440px) and (max-width:450px) {
-		padding: 0px;
-	}
-`;
-
-export const CoverInfoContainer = styled.section`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Roboto', sans-serif;
-	max-width: 684px;
-	z-index: 1;
-
+export const CoverInfoContainer = styled.section.attrs({
+	className: "relative flex flex-col items-center text-center max-w-[500px] lg:items-start lg:text-left xl:max-w-[650px]"
+})`
 	:before {
 		content:"<html>";
 		position: absolute;
@@ -57,9 +21,10 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+		display: none;
 
-		@media (max-width:1599px) {
-			display: none;
+		@media (min-width: 1366px) {
+			display: block;
 		}
 	}
 
@@ -71,16 +36,14 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+		display: none;
 
-		@media (max-width:1599px) {
-			display: none;
+		@media (min-width:1366px) {
+			display: block;
 		}
 	}
 
 	>h1 {
-		font-size: 48px;
-		margin: 16px 0px 0px 0px;
-
 		:before {
 			content: "<h1>";
 			position: absolute;
@@ -89,18 +52,15 @@ export const CoverInfoContainer = styled.section`
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+			display: none;
 
-			@media (max-width:1599px) {
-				display: none;
+			@media (min-width:1366px) {
+				display: block;
 			}
 		}
 	}
 
 	>p {
-		font-size: 16px;
-		color: rgba(255, 255, 255, 0.6);
-		margin: 8px 0px 0px 0px;
-
 		:before {
 			content:"<p>";
 			position: absolute;
@@ -117,10 +77,10 @@ export const CoverInfoContainer = styled.section`
 	}
 
 	>a {
-		color: var(--primary);
+		/* color: var(--primary);
 		margin: 48px 0px 0px 0px;
 		font-family: 'Roboto Mono', monospace;
-		transition: 250ms;
+		transition: 250ms; */
 	
 		:hover {
 			filter: brightness(1.2);
@@ -273,8 +233,4 @@ export const ScrollDownAnimationContainer = styled.div`
 	aspect-ratio: 1/1;
 	opacity: 0.8;
 	animation: 2s ${scrollAnimation} infinite alternate linear;
-
-	@media (max-height: 800px) {
-		display: none;
-	}
 `;

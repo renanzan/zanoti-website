@@ -21,11 +21,15 @@ const HomeTemplate: NextComponentType = () => {
 				<S.CoverInfoContainer>
 					<S.Badge>Front-End Developer</S.Badge>
 
-					<h1>Renan Zanoti.</h1>
+					<h1 className="font-bold text-[32px] mt-4 font-roboto md:text-[48px]">Renan Zanoti.</h1>
 
-					<p>Sou desenvolvedor de software especializado em React, crio aplicações e páginas web do zero. Sou extremamente apaixonado pelo que faço!</p>
+					<p className="text-white-600 font-roboto text-base">Sou desenvolvedor de software especializado em React, crio aplicações e páginas web do zero. Sou extremamente apaixonado pelo que faço!</p>
 
-					<Link href="/contact" passHref><a>Vamos criar algo incrível juntos?</a></Link>
+					<Link href="/contact" passHref>
+						<a className="text-primary mt-12 pb-6 font-roboto-mono">
+							Vamos criar algo incrível juntos?
+						</a>
+					</Link>
 				</S.CoverInfoContainer>
 
 				<MyPhoto />
@@ -37,7 +41,7 @@ const HomeTemplate: NextComponentType = () => {
 				<ConnectParticles />
 			</S.Cover>
 
-			<S.Content>
+			{/* <S.Content>
 				<S.Introduction>
 					<SkillsCardsList />
 
@@ -74,7 +78,7 @@ const HomeTemplate: NextComponentType = () => {
 				</S.ListOfCompanies>
 
 				<ContactForm />
-			</S.Content>
+			</S.Content> */}
 		</Layout>
 	);
 }

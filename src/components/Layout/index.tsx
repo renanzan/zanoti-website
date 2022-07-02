@@ -80,7 +80,7 @@ const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, chi
 					{children}
 				</S.Main>
 
-				<Footer />
+				{/* <Footer /> */}
 			</S.Root>
 		</LayoutContext.Provider>
 	);

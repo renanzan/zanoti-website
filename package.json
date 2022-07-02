@@ -31,7 +31,7 @@
 		"typescript": "^4.7.4"
 	},
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev && npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
 		"build": "next build",
 		"start": "next start"
 	}

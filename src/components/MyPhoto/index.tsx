@@ -7,47 +7,41 @@ const MyPhoto: NextComponentType = () => {
 	return (
 		<S.Root>
 			<S.FloatingSphere
-				x="-30px"
-				y="50%"
-				z={3}
-				speed={11}>
+				className="left-[-30px] top-[50%] z-[3]"
+				speed="11">
 				<Image
 					src="/assets/icons/node-js.svg"
-					height="40px"
-					width="40px" />
+					height="32px"
+					width="32px" />
 			</S.FloatingSphere>
 
 			<Image
 				src="/assets/images/photo.png"
 				layout="fill"
-				style={{ zIndex: 2 }}
-				priority
-				quality={100} />
+				className="z-[2]"
+				quality={100}
+				priority />
 
 			<S.FloatingSphere
-				x="calc(100% - 80px)"
-				y="calc(100% - 80px)"
-				z={4}
-				speed={9}>
+				className="left-[calc(100%-60px)] top-[calc(100%-60px)] z-[3]"
+				speed="9">
 				<Image
 					src="/assets/icons/react-js.svg"
-					height="64px"
-					width="64px" />
+					height="48px"
+					width="48px" />
 			</S.FloatingSphere>
 
 			<S.FloatingSphere
-				x="calc(100% - 60px)"
-				y="-20px"
-				z={1}
-				speed={8}>
+				className="left-[calc(100%-54px)] top-[-20px] z-[1]"
+				speed="8">
 				<Image
 					src="/assets/icons/ts.svg"
-					height="32px"
-					width="32px" />
+					height="24px"
+					width="24px" />
 			</S.FloatingSphere>
 
-			<S.FloatingSphere x="-25px" y="20px" z={2} speed={10} />
-			<S.FloatingBlueSphere x="calc(100% + 32px)" y="calc(100% - 96px)" speed={11} />
+			<S.FloatingSphere className="left-[-16px] top-[16px] z-[2]" speed="10" />
+			<S.FloatingBlueSphere className="left-[calc(100%+24px)] top-[calc(100%-80px)] z-[2]" speed="11" />
 			<S.ShadowBall />
 		</S.Root>
 	);

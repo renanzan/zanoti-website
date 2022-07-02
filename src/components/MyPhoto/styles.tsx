@@ -1,65 +1,28 @@
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 
-const floatAnimation = keyframes`
-	0% { transform: translateY(0px); }
-	40% { transform: translateY(10px); }
-	50% { transform: translateY(10px); }
-	100% { transform: translateY(-10px); }
-`;
+export const Root = styled.div.attrs({
+	className: "relative w-[200px] aspect-square z-[1] pointer-events-none select-none lg:scale-[1.3]"
+})``;
+
+export const ShadowBall = styled.div.attrs({
+	className: "absolute h-full aspect-square rounded-full top-[-15px] right-[-30px] z-[0] bg-gradient-to-b from-[#28292d]"
+})``;
 
 type FloatingSphereParams = {
-	x?: string;
-	y?: string;
-	z?: number;
-	speed: number;
+	speed: string;
 }
 
-export const Root = styled.div`
-	position: relative;
-	width: fit-content;
-	align-self: center;
-	min-width: 256px;
-	aspect-ratio: 1/1;
-	pointer-events: none;
-	user-select: none;
+export const FloatingSphere = styled(motion.div).attrs<FloatingSphereParams>(({ speed }) => ({
+	className: `absolute block bg-background min-h-[24px] h-fit w-fit aspect-square rounded-full p-4 shadow-md`,
+	initial: { y: 10 },
+	animate: { y: -10 },
+	transition: { duration: speed, repeat: Infinity, repeatType: "reverse", easeInOut: true }
+})) <FloatingSphereParams>``;
 
-	@media (max-width:450px) {
-		transform: scale(0.8);
-		margin: -10%;
-	}
-`;
-
-export const ShadowBall = styled.div`
-	position: absolute;
-	height: 100%;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	top: -20px;
-	right: -40px;
-	z-index: 0;
-	background: linear-gradient(135deg, rgba(40, 41, 45, 0.8) 0%, rgba(40, 41, 45, 0) 100%);
-`;
-
-export const FloatingSphere = styled.div<FloatingSphereParams>`
-	position: absolute;
-	background: #25262A;
-	min-width: 38px;
-	min-height: 38px;
-	border-radius: 50%;
-	padding: 16px;
-	box-shadow: 6px 0px 20px -4px rgba(0, 0, 0, 0.25);
-	top: ${({ y }) => y};
-	left: ${({ x }) => x};
-	z-index: ${({ z }) => z};
-	height: fit-content;
-	width: fit-content;
-	animation: ${floatAnimation} ${({ speed }) => `${speed}s`} ease-in-out infinite alternate;
-	animation-delay: 1s;
-`;
-
-export const FloatingBlueSphere = styled(FloatingSphere)`
-	background: #6ED2F2;
-	padding: 0px;
-	min-width: 12px;
-	min-height: 12px;
-`;
+export const FloatingBlueSphere = styled(motion.div).attrs<FloatingSphereParams>(({ speed }) => ({
+	className: "absolute block h-fit w-fit aspect-square rounded-full p-4 shadow-md min-h-[8px] bg-[#6ED2F2] p-0",
+	initial: { y: 10 },
+	animate: { y: -10 },
+	transition: { duration: speed, repeat: Infinity, repeatType: "reverse", easeInOut: true }
+})) <FloatingSphereParams>``;

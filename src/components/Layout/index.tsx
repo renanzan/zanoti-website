@@ -72,15 +72,15 @@ const Layout: NextComponentType<{}, {}, Props> = ({ title, waterMarkSection, chi
 			<S.Root>
 				<Header config={headerConfig} />
 
-				{waterMarkSection && (
-					<WaterMarkSection>{waterMarkSection}</WaterMarkSection>
-				)}
-
 				<S.Main {...rest}>
-					{children}
-				</S.Main>
+					{waterMarkSection && (
+						<WaterMarkSection>{waterMarkSection}</WaterMarkSection>
+					)}
 
-				{/* <Footer /> */}
+					{children}
+
+					<Footer />
+				</S.Main>
 			</S.Root>
 		</LayoutContext.Provider>
 	);

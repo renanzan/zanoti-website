@@ -7,11 +7,15 @@ const scrollAnimation = keyframes`
 `;
 
 export const Cover = styled.div.attrs({
-	className: "relative flex flex-col-reverse items-center justify-center bg-background-light py-24 px-4 gap-16 shadow-md min-h-screen md:px-12 md:gap-20 lg:gap-40 lg:flex-row"
+	className: "relative flex justify-center py-24 px-4 min-w-full min-h-screen bg-background-light shadow-md"
+})``;
+
+export const Grid = styled.div.attrs({
+	className: "relative w-full grid grid-cols-1 grid-flow-row-dense content-center justify-items-center gap-12 md:px-12 md:gap-24 lg:w-auto lg:grid-flow-col lg:grid-cols-[repeat(2,minmax(0px,max-content))] lg:gap-40"
 })``;
 
 export const CoverInfoContainer = styled.section.attrs({
-	className: "relative flex flex-col items-center text-center max-w-[500px] lg:items-start lg:text-left xl:max-w-[650px]"
+	className: "relative order-1 flex flex-col items-center text-center max-w-[500px] lg:order-none lg:items-start lg:text-left xl:max-w-[650px]"
 })`
 	:before {
 		content:"<html>";
@@ -69,21 +73,11 @@ export const CoverInfoContainer = styled.section.attrs({
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+			display: none;
 
-			@media (max-width:1599px) {
-				display: none;
+			@media (min-width:1366px) {
+				display: block;
 			}
-		}
-	}
-
-	>a {
-		/* color: var(--primary);
-		margin: 48px 0px 0px 0px;
-		font-family: 'Roboto Mono', monospace;
-		transition: 250ms; */
-	
-		:hover {
-			filter: brightness(1.2);
 		}
 	}
 
@@ -97,17 +91,9 @@ export const CoverInfoContainer = styled.section.attrs({
 	}
 `;
 
-export const Badge = styled.span`
-	background: var(--primary);
-	font-family: 'Roboto Mono', monospace;
-	font-size: 12px;
-	font-weight: 700;
-	color: #2D2E32;
-	letter-spacing: -0.04em;
-	padding: 2px 6px;
-	border-radius: 2px;
-	width: fit-content;
-`;
+export const Badge = styled.span.attrs({
+	className: "bg-primary text-background font-roboto-mono font-extrabold py-[2px] px-[6px] rounded-[2px] w-fit tracking-[-0.04em] text-[12px]"
+})``;
 
 export const Content = styled.div`
 	display: flex;
@@ -228,9 +214,9 @@ export const ListOfCompanies = styled.div`
 
 export const ScrollDownAnimationContainer = styled.div`
 	position: absolute;
-	bottom: 64px;
-	height: 32px;
-	aspect-ratio: 1/1;
+	bottom: 28px;
+	height: 64px;
+	width: 32px;
 	opacity: 0.8;
 	animation: 2s ${scrollAnimation} infinite alternate linear;
 `;

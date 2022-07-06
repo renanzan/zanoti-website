@@ -9,6 +9,7 @@ export const Root = styled.div`
 	min-height: 100vh;
 	background-color: var(--background);
 	color: var(--text);
+	overflow: hidden;
 `;
 
 export const Main = styled.main`
@@ -18,4 +19,5 @@ export const Main = styled.main`
   flex-direction: column;
 	overflow-x: hidden;
 	z-index: 2;
+	min-width: 100vw;
 `;

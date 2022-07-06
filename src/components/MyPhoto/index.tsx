@@ -1,53 +1,37 @@
 import { NextComponentType } from "next";
 import Image from "next/image";
 
+import NodeJSIcon from "@public/assets/icons/node-js.svg";
+import ReactJSIcon from "@public/assets/icons/react-js.svg";
+import TSIcon from "@public/assets/icons/ts.svg";
+
 import * as S from "./styles";
 
 const MyPhoto: NextComponentType = () => {
 	return (
 		<S.Root>
 			<S.FloatingSphere
-				x="-30px"
-				y="50%"
-				z={3}
-				speed={11}>
-				<Image
-					src="/assets/icons/node-js.svg"
-					height="40px"
-					width="40px" />
+				className="h-[64px] w-[64px] left-[-30px] top-[50%] z-[3]"
+				speed="11">
+				<NodeJSIcon />
 			</S.FloatingSphere>
 
-			<Image
-				src="/assets/images/photo.png"
-				layout="fill"
-				style={{ zIndex: 2 }}
-				priority
-				quality={100} />
+			<S.Photo />
 
 			<S.FloatingSphere
-				x="calc(100% - 80px)"
-				y="calc(100% - 80px)"
-				z={4}
-				speed={9}>
-				<Image
-					src="/assets/icons/react-js.svg"
-					height="64px"
-					width="64px" />
+				className="h-[80px] w-[80px] left-[calc(100%-60px)] top-[calc(100%-60px)] z-[3]"
+				speed="9">
+				<ReactJSIcon className="h-full aspect-square" />
 			</S.FloatingSphere>
 
 			<S.FloatingSphere
-				x="calc(100% - 60px)"
-				y="-20px"
-				z={1}
-				speed={8}>
-				<Image
-					src="/assets/icons/ts.svg"
-					height="32px"
-					width="32px" />
+				className="h-[56px] w-[56px] left-[calc(100%-54px)] top-[-20px] z-[1]"
+				speed="8">
+				<TSIcon />
 			</S.FloatingSphere>
 
-			<S.FloatingSphere x="-25px" y="20px" z={2} speed={10} />
-			<S.FloatingBlueSphere x="calc(100% + 32px)" y="calc(100% - 96px)" speed={11} />
+			<S.FloatingSphere className="p-0 left-[-16px] top-[16px] z-[2]" speed="10" />
+			<S.FloatingSphere className="bg-[#6ED2F2] p-0 min-w-[8px] min-h-[8px] left-[calc(100%+24px)] top-[calc(100%-80px)] z-[2]" speed="11" style={{ background: "#6ED2F2", padding: "0px" }} />
 			<S.ShadowBall />
 		</S.Root>
 	);

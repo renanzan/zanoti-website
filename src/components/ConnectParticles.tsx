@@ -25,7 +25,7 @@ export function ConnectParticles() {
 
 		setTimeout(() => {
 			onMount();
-		}, 10);
+		}, 100);
 	};
 
 	// https://codesandbox.io/s/iznee?file=/configs/tsParticles.js:31-948

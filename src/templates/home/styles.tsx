@@ -6,49 +6,17 @@ const scrollAnimation = keyframes`
 	100% { transform: translateY(-10px) }
 `;
 
-export const Cover = styled.div`
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #2D2E32;
-	padding: 240px 80px 180px 24px;
-	gap: 124px;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+export const Cover = styled.div.attrs({
+	className: "relative flex justify-center py-24 px-4 min-w-full min-h-screen bg-background-light shadow-md"
+})``;
 
-	@media (max-height:1440px) {
-		height: 100vh;
-		align-items: center;
-		padding: 0px;
-	}
+export const Grid = styled.div.attrs({
+	className: "relative w-full grid grid-cols-1 grid-flow-row-dense content-center justify-items-center gap-12 md:px-12 md:gap-24 lg:w-auto lg:grid-flow-col lg:grid-cols-[repeat(2,minmax(0px,max-content))] lg:gap-40"
+})``;
 
-	@media (max-width:770px) {
-		flex-direction: column-reverse;
-		padding: 120px 40px 120px 40px;
-		gap: 64px;
-	}
-
-	@media (max-height:1440px) and (max-width:770px) {
-		padding: 0px;
-	}
-
-	@media (max-width:450px) {
-		padding: 88px 24px 120px 24px;
-	}
-
-	@media (max-height:1440px) and (max-width:450px) {
-		padding: 0px;
-	}
-`;
-
-export const CoverInfoContainer = styled.section`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Roboto', sans-serif;
-	max-width: 684px;
-	z-index: 1;
-
+export const CoverInfoContainer = styled.section.attrs({
+	className: "relative order-1 flex flex-col items-center text-center max-w-[500px] lg:order-none lg:items-start lg:text-left xl:max-w-[650px]"
+})`
 	:before {
 		content:"<html>";
 		position: absolute;
@@ -57,9 +25,10 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+		display: none;
 
-		@media (max-width:1599px) {
-			display: none;
+		@media (min-width: 1366px) {
+			display: block;
 		}
 	}
 
@@ -71,16 +40,14 @@ export const CoverInfoContainer = styled.section`
 		color: rgba(255, 255, 255, 0.1);
 		font-size: 32px;
 		font-weight: lighter;
+		display: none;
 
-		@media (max-width:1599px) {
-			display: none;
+		@media (min-width:1366px) {
+			display: block;
 		}
 	}
 
 	>h1 {
-		font-size: 48px;
-		margin: 16px 0px 0px 0px;
-
 		:before {
 			content: "<h1>";
 			position: absolute;
@@ -89,18 +56,15 @@ export const CoverInfoContainer = styled.section`
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+			display: none;
 
-			@media (max-width:1599px) {
-				display: none;
+			@media (min-width:1366px) {
+				display: block;
 			}
 		}
 	}
 
 	>p {
-		font-size: 16px;
-		color: rgba(255, 255, 255, 0.6);
-		margin: 8px 0px 0px 0px;
-
 		:before {
 			content:"<p>";
 			position: absolute;
@@ -109,21 +73,11 @@ export const CoverInfoContainer = styled.section`
 			color: rgba(255, 255, 255, 0.1);
 			font-size: 32px;
 			font-weight: lighter;
+			display: none;
 
-			@media (max-width:1599px) {
-				display: none;
+			@media (min-width:1366px) {
+				display: block;
 			}
-		}
-	}
-
-	>a {
-		color: var(--primary);
-		margin: 48px 0px 0px 0px;
-		font-family: 'Roboto Mono', monospace;
-		transition: 250ms;
-	
-		:hover {
-			filter: brightness(1.2);
 		}
 	}
 
@@ -137,17 +91,9 @@ export const CoverInfoContainer = styled.section`
 	}
 `;
 
-export const Badge = styled.span`
-	background: var(--primary);
-	font-family: 'Roboto Mono', monospace;
-	font-size: 12px;
-	font-weight: 700;
-	color: #2D2E32;
-	letter-spacing: -0.04em;
-	padding: 2px 6px;
-	border-radius: 2px;
-	width: fit-content;
-`;
+export const Badge = styled.span.attrs({
+	className: "bg-primary text-background font-roboto-mono font-extrabold py-[2px] px-[6px] rounded-[2px] w-fit tracking-[-0.04em] text-[12px]"
+})``;
 
 export const Content = styled.div`
 	display: flex;
@@ -268,13 +214,9 @@ export const ListOfCompanies = styled.div`
 
 export const ScrollDownAnimationContainer = styled.div`
 	position: absolute;
-	bottom: 64px;
-	height: 32px;
-	aspect-ratio: 1/1;
+	bottom: 28px;
+	height: 64px;
+	width: 32px;
 	opacity: 0.8;
 	animation: 2s ${scrollAnimation} infinite alternate linear;
-
-	@media (max-height: 800px) {
-		display: none;
-	}
 `;

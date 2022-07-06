@@ -8,9 +8,7 @@ import * as S from "./styles";
 
 const ProjectsTemplate = () => {
 	return (
-		<Layout
-			title="Renan Zanoti ― Projetos"
-			waterMarkSection="Projetos">
+		<Layout waterMarkSection="Projetos">
 			<S.Root>
 				<S.Content>
 					<S.ProjectList>

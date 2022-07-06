@@ -7,9 +7,7 @@ import ContactForm from "components/ContactForm";
 
 const ContactTemplate: NextPage = () => {
 	return (
-		<Layout
-			title="Renan Zanoti ― Contato"
-			waterMarkSection="Contato">
+		<Layout waterMarkSection="Contato">
 
 			<S.Content>
 				<S.CardCointainer>

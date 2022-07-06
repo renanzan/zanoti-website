@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
+import { Fragment } from "react";
 
+import PageSeo from "components/PageSeo";
 import BlogTemplate from "templates/blog";
 import { fetchArticles } from "services/dev-to";
 
@@ -9,8 +11,14 @@ type BlogPageType = {
 
 const BlogPage: NextPage<BlogPageType> = ({ articles }) => {
 	return (
-		<BlogTemplate articles={articles} />
-	)
+		<Fragment>
+			<PageSeo
+				title="Blog"
+				description="Últimas postagens de Renan Zanoti." />
+
+			<BlogTemplate articles={articles} />
+		</Fragment>
+	);
 }
 
 export async function getStaticProps() {

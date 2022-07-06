@@ -12,9 +12,7 @@ type BlogTemplateType = {
 
 const BlogTemplate: NextPage<BlogTemplateType> = ({ articles }) => {
 	return (
-		<Layout
-			title="Renan Zanoti ― Blog"
-			waterMarkSection="Blog">
+		<Layout waterMarkSection="Blog">
 
 			<S.ArticlesContainer>
 				{articles.map((article, idx) => (

@@ -1,8 +1,17 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Root = styled.div.attrs({
-	className: "relative w-[200px] aspect-square z-[1] pointer-events-none select-none lg:scale-[1.3]"
+	className: "relative h-[200px] w-[200px] aspect-square z-[1] self-center pointer-events-none select-none md:scale-[1.3]"
+})``;
+
+export const Photo = styled(Image).attrs({
+	src: "/assets/images/photo.png",
+	layout: "fill",
+	className: "relative z-[2]",
+	quality: 100,
+	priority: true
 })``;
 
 export const ShadowBall = styled.div.attrs({
@@ -13,15 +22,8 @@ type FloatingSphereParams = {
 	speed: string;
 }
 
-export const FloatingSphere = styled(motion.div).attrs<FloatingSphereParams>(({ speed }) => ({
-	className: `absolute block bg-background min-h-[24px] h-fit w-fit aspect-square rounded-full p-4 shadow-md`,
-	initial: { y: 10 },
-	animate: { y: -10 },
-	transition: { duration: speed, repeat: Infinity, repeatType: "reverse", easeInOut: true }
-})) <FloatingSphereParams>``;
-
-export const FloatingBlueSphere = styled(motion.div).attrs<FloatingSphereParams>(({ speed }) => ({
-	className: "absolute block h-fit w-fit aspect-square rounded-full p-4 shadow-md min-h-[8px] bg-[#6ED2F2] p-0",
+export const FloatingSphere = styled(motion.span).attrs<FloatingSphereParams>(({ speed }) => ({
+	className: `absolute flex items-center justify-center bg-background aspect-square rounded-full shadow-md p-4`,
 	initial: { y: 10 },
 	animate: { y: -10 },
 	transition: { duration: speed, repeat: Infinity, repeatType: "reverse", easeInOut: true }

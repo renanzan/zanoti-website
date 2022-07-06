@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 
 import DynamicLogo from "components/DynamicLogo";
 
-type RootParams = {
-	blur?: boolean;
-}
-
 export const LogoContainer = styled(motion.a)`
 	display: flex;
 	margin-right: 104px;

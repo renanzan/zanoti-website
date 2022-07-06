@@ -18,30 +18,32 @@ const HomeTemplate: NextComponentType = () => {
 	return (
 		<Layout>
 			<S.Cover>
-				<S.CoverInfoContainer>
-					<S.Badge>Front-End Developer</S.Badge>
+				<S.Grid>
+					<S.CoverInfoContainer>
+						<S.Badge>Front-End Developer</S.Badge>
 
-					<h1 className="font-bold text-[32px] mt-4 font-roboto md:text-[48px]">Renan Zanoti.</h1>
+						<h1 className="font-bold text-[32px] mt-4 font-roboto md:text-[48px]">Renan Zanoti.</h1>
 
-					<p className="text-white-600 font-roboto text-base">Sou desenvolvedor de software especializado em React, crio aplicações e páginas web do zero. Sou extremamente apaixonado pelo que faço!</p>
+						<p className="text-white-600 font-roboto text-base">Sou desenvolvedor de software especializado em React, crio aplicações e páginas web do zero. Sou extremamente apaixonado pelo que faço!</p>
 
-					<Link href="/contact" passHref>
-						<a className="text-primary mt-12 pb-6 font-roboto-mono">
-							Vamos criar algo incrível juntos?
-						</a>
-					</Link>
-				</S.CoverInfoContainer>
+						<Link href="/contact" passHref>
+							<a className="text-primary mt-12 pb-6 font-roboto-mono hover:brightness-110">
+								Vamos criar algo incrível juntos?
+							</a>
+						</Link>
+					</S.CoverInfoContainer>
 
-				<MyPhoto />
+					<MyPhoto />
+				</S.Grid>
 
 				<S.ScrollDownAnimationContainer>
 					{ScrollAnimation}
 				</S.ScrollDownAnimationContainer>
 
-				<ConnectParticles />
+				{/* <ConnectParticles /> */}
 			</S.Cover>
 
-			{/* <S.Content>
+			<S.Content>
 				<S.Introduction>
 					<SkillsCardsList />
 
@@ -55,7 +57,7 @@ const HomeTemplate: NextComponentType = () => {
 						<S.IntroductionDescription>
 							{`Sou profissional de front-end, possuo quase 4 anos de experiência na área. Durante esse tempo trabalhei com diversas tecnologias e busquei me aperfeiçoar no desenvolvimento de páginas e aplicações web, atualmente me especializo em ReactJS. Extremamente apaixonado pelo que faço, estou sempre em busca de aperfeiçoamento e desenvolvimento técnico e pessoal.
                             
-														Além do conhecimento técnico, possuo como qualidades, organização e perfeccionismo, o que me permite criar interfaces intuitivas e de fácil usabilidade ao usuário final. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
+								Além do conhecimento técnico, possuo como qualidades, organização e perfeccionismo, o que me permite criar interfaces intuitivas e de fácil usabilidade ao usuário final. Gosto de manter o código limpo e bem documentado, e sempre procuro a melhor maneira de resolver um problema.
 								
 								Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:`}
 						</S.IntroductionDescription>
@@ -78,7 +80,7 @@ const HomeTemplate: NextComponentType = () => {
 				</S.ListOfCompanies>
 
 				<ContactForm />
-			</S.Content> */}
+			</S.Content>
 		</Layout>
 	);
 }
